@@ -13,6 +13,7 @@
 
 <body>
   <div id="wrapper" class="wrapper">
+    <?php include('header.php'); ?>
     <main id="main" class="main">
       <section class="hero">
         <div class="hero__container">

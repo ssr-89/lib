@@ -13,6 +13,7 @@
 
 <body>
   <div id="wrapper" class="wrapper">
+    <?php include('header.php'); ?>
     <main class="templates">
       <section class="templates-main">
         <div class="templates-main__container">

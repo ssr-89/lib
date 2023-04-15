@@ -8,7 +8,7 @@
           </a>
         </li>
         <li class="header-menu__item header-menu-item">
-          <a class="header-menu-item__link link" href="html-css.html">
+          <a class="header-menu-item__link link" href="html-css.php">
             <span>HTML&CSS</span>
             <svg viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11 1L6 6.00001L0.999997 1" stroke="black"></path>
@@ -33,7 +33,7 @@
           </ul>
         </li>
         <li class="header-menu__item header-menu-item">
-          <a class="header-menu-item__link link" href="js.html">
+          <a class="header-menu-item__link link" href="js.php">
             <span>JavaScript</span>
             <svg viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11 1L6 6.00001L0.999997 1" stroke="black"></path>
@@ -88,12 +88,12 @@
           </ul>
         </li>
         <li class="header-menu__item header-menu-item">
-          <a class="header-menu-item__link header-menu-item__link--git link" href="git.html">
+          <a class="header-menu-item__link header-menu-item__link--git link" href="git.php">
             <span>Global Information Tracker</span>
           </a>
         </li>
         <li class="header-menu__item header-menu-item">
-          <a class="header-menu-item__link link" href="tools.html">
+          <a class="header-menu-item__link link" href="tools.php">
             <span>Инструменты</span>
             <svg viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11 1L6 6.00001L0.999997 1" stroke="black"></path>
@@ -153,7 +153,7 @@
           </ul>
         </li>
         <li class="header-menu__item header-menu-item">
-          <a class="header-menu-item__link link" href="templates.html">
+          <a class="header-menu-item__link link" href="templates.php">
             <span>Шаблоны</span>
             <svg viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11 1L6 6.00001L0.999997 1" stroke="black"></path>
@@ -213,7 +213,7 @@
           </ul>
         </li>
         <li class="header-menu__item header-menu-item">
-          <a class="header-menu-item__link link" href="guide.html">
+          <a class="header-menu-item__link link" href="guide.php">
             <span>Справочник</span>
             <svg viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M11 1L6 6.00001L0.999997 1" stroke="black"></path>

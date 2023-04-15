@@ -12,6 +12,7 @@
 
 <body>
   <div id="wrapper" class="wrapper">
+    <?php include('header.php'); ?>
     <main id="main" class="main">
       <section id="license" class="license">
         <div class="license__container">

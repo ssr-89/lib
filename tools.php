@@ -13,6 +13,7 @@
 
 <body>
   <div id="wrapper" class="wrapper">
+    <?php include('header.php'); ?>
     <section class="tools-main">
       <div class="tools-main__container">
         <h1 class="tools-main__title title">Инструменты</h1>

@@ -12,6 +12,7 @@
 
 <body>
   <div id="wrapper" class="wrapper">
+    <?php include('header.php'); ?>
   </div>
 </body>
 

@@ -10,8 +10,9 @@
   <link rel="stylesheet" href="css/media.css">
   <script defer src="js/app.js"></script>
   <script defer>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
       const body = document.querySelector('body');
+
       function addHeader() {
         const $header = document.createElement('header');
         $header.classList.add('header', 'lock-padding');
@@ -32,7 +33,7 @@
       const headerMenu = document.getElementById("header-menu-list");
       const headerBurger = document.getElementById("header-burger");
 
-      headerBurger.addEventListener("click", function () {
+      headerBurger.addEventListener("click", function() {
         body.classList.toggle('blocking');
         header.classList.toggle("pull");
         headerBurger.classList.toggle("open");
@@ -44,7 +45,7 @@
       const sectionBtn = document.querySelector(".section-menu__btn");
       const sectionMenuLinks = document.querySelectorAll(".menu__link");
 
-      sectionBtn.addEventListener("click", function (e) {
+      sectionBtn.addEventListener("click", function(e) {
         e.preventDefault();
         this.classList.toggle("active");
         if (this.classList.contains("active")) {
@@ -53,8 +54,8 @@
           sectionMenu.classList.remove("active");
         }
       });
-      sectionMenuLinks.forEach(function (el) {
-        el.addEventListener("click", function () {
+      sectionMenuLinks.forEach(function(el) {
+        el.addEventListener("click", function() {
           sectionBtn.classList.remove("active");
           sectionMenu.classList.remove("active");
         });
@@ -72,6 +73,7 @@
 
 <body>
   <div id="wrapper" class="wrapper">
+    <?php include('header.php'); ?>
     <main id="main" class="main">
       <section class="hero">
         <div class="hero__container">
