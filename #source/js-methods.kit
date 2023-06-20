@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Методы JS</title>
+  <link type="image/x-icon" href="img/favicon-js.svg" rel="shortcut icon">
+  <link type="font/woff" href="fonts/Exo20-Light.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff" href="fonts/Exo20-ExtraLight.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff" href="fonts/Exo20-Medium.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff" href="fonts/Exo20-Regular.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff" href="fonts/Exo20-Bold.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff" href="fonts/Exo20-SemiBold.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff" href="fonts/Exo20-ExtraBold.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff" href="fonts/Exo20-Black.woff" rel="preload" as="font" crossorigin>
+  <link type="font/woff" href="fonts/Exo20-Thin.woff" rel="preload" as="font" crossorigin>
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+  <div id="wrapper" class="wrapper">
+    <!-- @import "header.kit" -->
+    <main id="main" class="main">
+      <section id="js-hero" class="hero">
+        <div class="hero__container">
+          <h1 class="hero__title title">Методы</h1>
+          <div class="hero__btns">
+            <button class="hero__burger btn">
+              <span></span>
+            </button>
+            <button class="theme-btn btn">
+              <span></span>
+            </button>
+          </div>
+          <nav class="hero__nav">
+            <ul class="hero__menu hero-menu list">
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#...">
+                  <span>Остаточные парметры <span>...</span></span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#fill">
+                  <span>Метод fill()</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#sort">
+                  <span>Метод sort()</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#filter">
+                  <span>Метод filter()</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#trim">
+                  <span>Методы trim(), replace() и replaceAll()</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#">
+                  <span></span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#">
+                  <span></span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <section id="..." class="section">
+        <div class="section__container">
+          <h2 class="section__title title">Остаточные параметры ...</h2>
+          <div class="section__block section-block">
+            <p class="section-block__text text">
+              Преобразование массива в объект
+            </p>
+            <pre class="section-block__pre pre">
+const cars = ["BMW", "Volvo", "Lada"];
+const object = { ...cars };
+
+console.log(object); <span class="com">// {"0": "BMW", "1": "Volvo", "2": "Lada",}</span>
+            </pre>
+            <p class="section-block__text text">
+              Также возможно скопировать данные одного массива в другой
+            </p>
+            <pre class="section-block__pre pre">
+const cars = [ "BMW", "Volvo", "Lada" ];
+
+const arr = [...cars];
+
+console.log(arr); <span class="com">// [ "BMW", "Volvo", "Lada" ]</span>
+            </pre>
+            <p class="section-block__text text">
+              Либо объект в другой объект
+            </p>
+            <pre class="section-block__pre pre">
+const cars = { brand1: "BMW", brand2: "Volvo", brand3: "Lada" };
+
+const arr = {...cars};
+
+console.log(arr); <span class="com">// { brand1: "BMW", brand2: "Volvo", brand3: "Lada" }</span>
+            </pre>
+            <pre class="section-block__pre pre">
+const arr = [
+  {name: "John", age: 74},
+  {name: "Alex", age: 6},
+  {name: "Anna", age: 28},
+  {name: "Kate", age: 17},
+  {name: "Ivan", age: 32},
+  {name: "Petro", age: 41}
+];
+
+const array = {...arr};
+
+console.log(array);
+<span class="com">
+{
+  "0": {"name": "John", "age": 74},
+  "1": {"name": "Alex", "age": 6},
+  "2": {"name": "Anna", "age": 28},
+  "3": {"name": "Kate", "age": 17},
+  "4": {"name": "Ivan", "age": 32},
+  "5": {"name": "Petro", "age": 41}
+}</span>
+            </pre>
+          </div>
+        </div>
+      </section>
+      <section id="fill" class="section dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">Метод fill()</h2>
+          <div class="section__block section-block">
+            <p class="section-block__text text">
+              Метод <span class="span-text">fill()</span> - это метод массивов в JavaScript, который позволяет заполнить все элементы массива одним и тем же значением.
+            </p>
+            <p class="section-block__text text">
+              Синтаксис метода <span class="span-text">fill()</span> выглядит следующим образом:
+            </p>
+            <pre class="section-block__pre pre">
+arr.fill(value, start, end);
+            </pre>
+            <dl>
+              <dd><span class="span-text">value</span> - значение, которым заполняются все элементы массива.</dd><br>
+              <dd><span class="span-text">start</span> (необязательный параметр) - индекс, с которого начинается заполнение. По умолчанию равен 0. Положительное число указывает сколько скрыть сначала слева. Отрицательное число указывает сколько показать с конца справа.</dd><br>
+              <dd><span class="span-text">end</span> (необязательный параметр) - индекс, до которого происходит заполнение. По умолчанию равен длине массива. Указывает индекс после которого скрывает последующие значения. Положительное число отсчёт сначала слева. Отрицательное число отсчёт с конца справа.</dd>
+            </dl>
+            <p class="section-block__text text">
+              Примеры использования метода fill():
+            </p>
+            <pre class="section-block__pre pre">
+let arr = [1, 2, 3, 4, 5];
+arr.fill(0); <span class="com">// [0, 0, 0, 0, 0]</span>
+
+let arr2 = [1, 2, 3, 4, 5];
+arr2.fill(0, 2, 4); <span class="com">// [1, 2, 0, 0, 5]</span>
+            </pre>
+            <p class="section-block__text text">
+              В первом примере все элементы массива arr заполняются нулями. Во втором примере только элементы с индексами от 2 до 4 заполняются нулями, а остальные остаются без изменений.
+            </p>
+            <p class="section-block__text text">
+              Метод <span class="span-text">fill()</span> также поддерживается в массивоподобных объектах, таких как строка (тип String) или псевдомассив аргументов функции (тип arguments).
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="sort" class="section">
+        <div class="section__container">
+          <h2 class="section__title title">Метод sort()</h2>
+          <div class="section__block section-block">
+            <p class="section-block__text text">
+              <span class="span-text">sort()</span> &mdash; при сортировке изменяет изначальный массив, поэтому необходимо создать копию массива, который будет сортироваться.
+            </p>
+            <a class="section-block__link" href="https://jsbin.com/zukozik/edit?js,console" target="_blank">
+              Ссылка на способы дублирования массива.
+            </a>
+            <ol class="section-block__list">
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  <span class="span-text">sort()</span> &mdash;&nbsp;без заданных параметров сортирует как строки посимвольно.
+                </p>
+                <pre class="section-block__pre pre">
+const numbs = [9,5,8,2,45,6,7,1542,3];
+
+console.log(numbs.sort()); <span class="com">// [1542,2,3,45,5,6,7,8,9]</span>
+                </pre>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text"><b>Сортировка чисел</b></p>
+                <p class="section-block__text text">
+                  Для сортировки чисел необходимо задать параметры и&nbsp;создать функцию.
+                </p>
+                <p class="section-block__text text">
+                  #1
+                </p>
+                <pre class="section-block__pre pre">
+const numbs = [9,5,8,2,4,6,7,1,3];
+
+const arrNumbs = numbs.slice(); <span class="com">// дублирует массив</span>
+
+arrNumbs.sort((a, b) =&gt; a - b); <span class="com">// b – a сортирует в обратном порядке</span>
+
+console.log(arrNumbs); <span class="com">// [1,2,3,4,5,6,7,8,9]</span>
+
+<span class="com">
+// длинный вариант
+
+// arrNumbs.sort((a, b) =&gt; {
+//   return a - b; // return указать обязательно
+// });
+</span>
+                </pre>
+                <p class="section-block__text text">
+                  #2
+                </p>
+                <pre class="section-block__pre pre">
+const numbs = [9,5,8,2,4,6,7,1,3];
+
+const arrNumbs = [...numbs]; <span class="com">// дублирует массив</span>
+
+arrNumbs.sort((a, b) =&gt; {
+  if (a &gt; b) return -1; <span class="com">// a &lt; b сортирует в обратном порядке</span>
+});
+
+console.log(arrNumbs); <span class="com">// [9,8,7,6,5,4,3,2,1]</span>
+<span class="com">
+// длинный вариант
+
+// arrNumbs.sort((a, b) =&gt; {
+//   if (a &gt; b) {
+//     return 1;
+//   } else {
+//     return -1;
+//   }
+// });
+</span>
+                </pre>
+                <a class="section-block__link" href="https://codepen.io/archicolt/pen/qBJWeLN?editors=0012" target="_blank">Ссылка на простые примеры сортировки</a>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text"><b>Сортировка строк</b></p>
+                <p class="section-block__text text">
+                  <span class="span-text">localeCompare()</span> - этот метод помогает сортировать строки.
+                </p>
+                <pre class="section-block__pre pre">
+let arr = [
+  {name: "John", age: 74},
+  {name: "Alex", age: 6},
+  {name: "Anna", age: 28},
+  {name: "Kate", age: 17},
+  {name: "Ivan", age: 32},
+  {name: "Petro", age: 41}
+];
+
+const array = [...arr].sort((a, b) =&gt; {
+  return a.name<span class="span-text">.localeCompare</span>(b.name);
+});
+
+console.log(array);
+<span class="com">
+// [
+//  {"name": "Alex", "age": 6},
+//  {"name": "Anna", "age": 28},
+//  {"name": "Ivan", "age": 32},
+//  {"name": "John", "age": 74},
+//  {"name": "Kate", "age": 17},
+//  {"name": "Petro", "age": 41}
+// ]
+</span>
+                </pre>
+                <p class="section-block__text text">
+                  Важно помнить, что метод <span class="span-text">sort()</span> может работать неправильно с некоторыми локализациями.
+                </p>
+                <p class="section-block__text text">
+                  Например, в некоторых языках сортировка должна производиться по алфавиту не в лексикографическом порядке (a-b-c-...), а в соответствии с локализованными правилами (гласные, согласные, и т.д.).
+                </p>
+                <p class="section-block__text text">
+                  Для таких случаев рекомендуется использовать метод <span class="span-text">localeCompare()</span>, который обеспечивает правильную локализованную сортировку строк.
+                </p>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  <b>Фича для сортировки на разных языках</b>
+                </p>
+                <p class="section-block__text text">
+                  <span class="span-text">new Intl.Collator()</span> - (Intl - internationalization) метод для правильного сортирования в алфавитном порядке на любых языках.
+                </p>
+                <p class="section-block__text text">
+                  Также включает в себя поддержку нестандартных символов и чувствительность к регистру. Кроме того, этот метод производительнее и более надёжен в работе.
+                </p>
+                <pre class="section-block__pre pre">
+<span class="span-text">const collatore = new Intl.Collator("ru-RU");</span>
+const users = [
+  {name: "Алексей", age: 26},
+  {name: "Степан", age: 19},
+  {name: "Екатерина", age: 22},
+  {name: "Тимофей", age: 27,},
+  {name: "Оксана", age: 25,},
+  {name: "Тимур", age: 29,},
+  {name: "Светлана", age: 21,},
+]
+
+users.sort((a, b) =&gt; <span class="span-text">collatore.compare</span>(a.name, b.name));
+
+console.log(users);
+<span class="com">
+  [
+    {"name": "Алексей", "age": 26},
+    {"name": "Екатерина", "age": 22},
+    {"name": "Оксана", "age": 25},
+    {"name": "Светлана", "age": 21},
+    {"name": "Степан", "age": 19},
+    {"name": "Тимофей", "age": 27},
+    {"name": "Тимур", "age": 29}
+  ]
+</span>
+                </pre>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text"></p>
+                <pre class="section-block__pre pre">
+let arr = [
+  {name: "John", age: 74},
+  {name: "Alex", age: 6},
+  {name: "Anna", age: 28},
+  {name: "Kate", age: 17},
+  {name: "Ivan", age: 32},
+  {name: "Petro", age: 41}
+];
+
+<span class="com">
+// function sortUsers(arr, prop, dir = false) {
+// let result = arr.sort(function (a, b) {
+//   if (!dir ? a[prop] &lt; b[prop] : a[prop] &gt; b[prop]) return -1;
+//   let dirIf = a[prop] &lt; b[prop];
+//   if (dir == true) dirIf = a[prop] &gt; b[prop];
+//   if (dirIf == true) {
+//     return -1;
+//   }
+// });
+// return result;
+// }
+</span>
+
+<span class="com">// сокращённый вариант</span>
+const sortUsers = (arr, prop, dir = false) =&gt;
+  arr.sort((a, b) =&gt; ((!dir ? a[prop] &lt; b[prop] : a[prop] &gt; b[prop]) ? -1 : 1));
+
+<span class="com">// при выборе определённого списка сортировки задаётся параметр переменной dir = false или true</span>
+console.log(sortUsers(arr, "name", true));
+                </pre>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <section id="filter" class="section dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">Метод filter()</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title"></h3>
+            <p class="section-block__text text"></p>
+            <pre class="section-block__pre pre">
+const a = [3, 5, 81, 3984, 7, 3, 85, 98, 6, 27, 95];
+
+let b = a.filter((item) <span class="com">/* параметр */</span> =&gt; {
+  if (item &lt; 81) return true; <span class="com">// необходимо указывать true, чтобы не выпал false</span>
+});
+console.log(b);
+            </pre>
+          </div>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title"></h3>
+            <p class="section-block__text text"></p>
+            <pre class="section-block__pre pre">
+const clients = [
+  { lin: "s2d1fs65g", user: "Smith", debt: 4 },
+  { lin: "3d5fg4sdg", user: "Ftith", debt: 0 },
+  { lin: "df5g4d3bd", user: "Dmyth", debt: 0 },
+  { lin: "b6dfb335b", user: "Pmuth", debt: 0 },
+  { lin: "3df5b4df3", user: "Rmeth", debt: 42435 },
+  { lin: "6db5d99fb", user: "Math", debt: 1684 },
+  { lin: "645d6b4d6", user: "Hmoth", debt: 2654 }
+];
+
+let debts = clients
+  .filter((item) =&gt; item.debt &gt;= 10) <span class="com">// выбрать должников</span>
+  .sort((a, b) =&gt; b.debt - a.debt); <span class="com">// сортировка выбранных должников</span>
+console.log(debts);
+            </pre>
+          </div>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title"></h3>
+            <p class="section-block__text text"></p>
+            <pre class="section-block__pre pre">
+const names = ["Oleg", "Anna", "Alexander"];
+
+const namesChange = names.filter(function (name) {
+  return name.length &lt; 5;
+});
+
+console.log(namesChange);
+            </pre>
+          </div>
+        </div>
+      </section>
+      <section id="#trim" class="section">
+        <div class="section__container">
+          <h2 class="section__title title">Методы trim(), replace() и replaceAll()</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">Метод trim()</h3>
+            <p class="section-block__text text">
+              Метод trim() удаляет пробелы в начале и в конце строки.
+            </p>
+            <pre class="section-block__pre pre">
+const str = <span class="span-text">'   some text     '</span>;
+
+console.log(str.trim()); <span class="com">// some text</span>
+            </pre>
+          </div>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">Метод replace()</h3>
+            <p class="section-block__text text">
+              Удаляет все пробелы в строке, передав ему первым аргументом <span class="span-text">/\\s/g</span>, а вторым пустую строку <span class="span-text">""</span>.
+            </p>
+            <pre class="section-block__pre pre">
+const text = <span class="span-text">'   Это текст, из которого мы хотим удалить      все пробелы .     '</span>;
+
+console.log(text.replace(/\\s/g, '')); <span class="com">// Этотекст,изкоторогомыхотимудалитьвсепробелы.</span>
+            </pre>
+          </div>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">Метод replaceAll()</h3>
+            <p class="section-block__text text">
+              Удаляет все пробелы в строке, передав ему первым аргументом пробел <span class="span-text">" "</span>, а вторым пустую строку <span class="span-text">""</span>.
+            </p>
+            <pre class="section-block__pre pre">
+const text = <span class="span-text">'   Это текст, из которого мы хотим удалить      все пробелы .     '</span>;
+
+console.log(text.replaceAll(' ', '')); <span class="com">// Этотекст,изкоторогомыхотимудалитьвсепробелы.</span>
+            </pre>
+          </div>
+        </div>
+      </section>
+      <!-- <section id="#" class="section">
+        <div class="section__container">
+          <h2 class="section__title title">CAPTION</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title"></h3>
+            <p class="section-block__text text"></p>
+            <pre class="section-block__pre pre"></pre>
+          </div>
+        </div>
+      </section>
+      <section id="#" class="section dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">CAPTION</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title"></h3>
+            <p class="section-block__text text"></p>
+            <pre class="section-block__pre pre"></pre>
+          </div>
+        </div>
+      </section> -->
+    </main>
+    <!-- @import "footer.kit" -->
+  </div>
+</body>
+
+</html>

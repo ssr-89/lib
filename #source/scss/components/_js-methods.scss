@@ -1,0 +1,68 @@
+/*js-methods*/
+.section {
+  &.dark-page {
+    background-color: var(--bg-dark-page);
+  }
+  &__container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    max-width: 1020px;
+  }
+  &__title {
+    margin-bottom: 50px;
+    font-size: 48px;
+  }
+  &-block {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+    &__title {
+      margin-bottom: 30px;
+      font-size: 36px;
+    }
+    &__link {
+      display: inline-block;
+      margin-bottom: 30px;
+      font-size: 20px;
+      color: var(--color-link);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &__item {
+      &::marker {
+        font-weight: 600;
+        font-size: 20px;
+      }
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+    &__text {
+      font-size: 20px;
+      line-height: 1.2;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+    &__pre {
+      padding: 20px 20px 0;
+      background-color: var(--bg-pre);
+      border-radius: 2px;
+      font-size: 15px;
+      color: var(--text-pre);
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+    .com {
+      font-style: italic;
+      color: var(--text-com-pre);
+    }
+    .span-text {
+      font-weight: 600;
+      color: var(--text-span);
+    }
+  }
+}
