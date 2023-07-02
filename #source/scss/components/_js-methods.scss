@@ -4,13 +4,13 @@
     background-color: var(--bg-dark-page);
   }
   &__container {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 50px 10px;
     max-width: 1020px;
   }
   &__title {
     margin-bottom: 50px;
     font-size: 48px;
+    color: var(--text-span);
   }
   &-block {
     &:not(:last-child) {
@@ -30,13 +30,20 @@
         text-decoration: underline;
       }
     }
-    &__item {
-      &::marker {
-        font-weight: 600;
-        font-size: 20px;
+    &__list--numbs {
+      .section-block__item {
+        &::marker {
+          font-weight: 600;
+          font-size: 20px;
+        }
+        &:not(:last-child) {
+          margin-bottom: 40px;
+        }
       }
+    }
+    &__item {
       &:not(:last-child) {
-        margin-bottom: 40px;
+        margin-bottom: 5px;
       }
     }
     &__text {
@@ -55,6 +62,17 @@
       &:not(:last-child) {
         margin-bottom: 20px;
       }
+    }
+    .js-methods-tooltip {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--second-color);
+      color: var(--main-color);
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      cursor: pointer;
     }
     .com {
       font-style: italic;

@@ -113,10 +113,8 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 /* Sections
@@ -152,12 +150,9 @@ h1 {
  */
 hr {
   -webkit-box-sizing: content-box;
-          box-sizing: content-box;
-  /* 1 */
-  height: 0;
-  /* 1 */
-  overflow: visible;
-  /* 2 */
+          box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
 }
 
 /**
@@ -165,10 +160,8 @@ hr {
  * 2. Correct the odd `em` font sizing in all browsers.
  */
 pre {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
@@ -185,13 +178,10 @@ a {
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
 abbr[title] {
-  border-bottom: none;
-  /* 1 */
-  text-decoration: underline;
-  /* 2 */
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
   -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
-  /* 2 */
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -209,10 +199,8 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
-  /* 1 */
-  font-size: 1em;
-  /* 2 */
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
 }
 
 /**
@@ -262,14 +250,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 1 */
-  line-height: 1.15;
-  /* 1 */
-  margin: 0;
-  /* 2 */
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
 }
 
 /**
@@ -340,18 +324,12 @@ fieldset {
  */
 legend {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  /* 1 */
-  color: inherit;
-  /* 2 */
-  display: table;
-  /* 1 */
-  max-width: 100%;
-  /* 1 */
-  padding: 0;
-  /* 3 */
-  white-space: normal;
-  /* 1 */
+          box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
 }
 
 /**
@@ -375,10 +353,8 @@ textarea {
 [type=checkbox],
 [type=radio] {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
+          box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
 }
 
 /**
@@ -396,10 +372,8 @@ textarea {
 [type=search] {
   -webkit-appearance: textfield;
      -moz-appearance: textfield;
-          appearance: textfield;
-  /* 1 */
-  outline-offset: -2px;
-  /* 2 */
+          appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
 }
 
 /**
@@ -414,10 +388,8 @@ textarea {
  * 2. Change font properties to `inherit` in Safari.
  */
 ::-webkit-file-upload-button {
-  -webkit-appearance: button;
-  /* 1 */
-  font: inherit;
-  /* 2 */
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
 }
 
 /* Interactive
@@ -575,6 +547,19 @@ body {
   line-height: 1;
 }
 
+/* ================================================== */
+/* Анимационный скролл */
+.hidden {
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+}
+
+/* ================================================== */
 ::-webkit-scrollbar {
   width: 5px;
   background-color: var(--dark-blue);
@@ -1143,13 +1128,13 @@ body {
   background-color: var(--bg-dark-page);
 }
 .section__container {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding: 50px 10px;
   max-width: 1020px;
 }
 .section__title {
   margin-bottom: 50px;
   font-size: 48px;
+  color: var(--text-span);
 }
 .section-block:not(:last-child) {
   margin-bottom: 40px;
@@ -1168,12 +1153,15 @@ body {
 .section-block__link:hover {
   text-decoration: underline;
 }
-.section-block__item::marker {
+.section-block__list--numbs .section-block__item::marker {
   font-weight: 600;
   font-size: 20px;
 }
-.section-block__item:not(:last-child) {
+.section-block__list--numbs .section-block__item:not(:last-child) {
   margin-bottom: 40px;
+}
+.section-block__item:not(:last-child) {
+  margin-bottom: 5px;
 }
 .section-block__text {
   font-size: 20px;
@@ -1191,6 +1179,23 @@ body {
 }
 .section-block__pre:not(:last-child) {
   margin-bottom: 20px;
+}
+.section-block .js-methods-tooltip {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: var(--second-color);
+  color: var(--main-color);
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  cursor: pointer;
 }
 .section-block .com {
   font-style: italic;

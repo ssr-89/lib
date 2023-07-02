@@ -91,6 +91,18 @@ body {
   font-size: inherit;
   line-height: 1;
 }
+
+/* ================================================== */
+/* Анимационный скролл */
+.hidden {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.show {
+  opacity: 1;
+}
+/* ================================================== */
+
 ::-webkit-scrollbar {
   width: 5px;
   background-color: var(--dark-blue);

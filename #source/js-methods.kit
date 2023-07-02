@@ -37,37 +37,67 @@
           <nav class="hero__nav">
             <ul class="hero__menu hero-menu list">
               <li class="hero-menu__item">
-                <a class="hero-menu__link link js-scroll-link" href="#...">
+                <a class="hero-menu__link link js-scroll-link" href="#..." title="дублирование массива/объекта">
                   <span>Остаточные парметры <span>...</span></span>
                 </a>
               </li>
               <li class="hero-menu__item">
-                <a class="hero-menu__link link js-scroll-link" href="#fill">
+                <a class="hero-menu__link link js-scroll-link" href="#fill" title="заполнение массива">
                   <span>Метод fill()</span>
                 </a>
               </li>
               <li class="hero-menu__item">
-                <a class="hero-menu__link link js-scroll-link" href="#sort">
+                <a class="hero-menu__link link js-scroll-link" href="#sort" title="сортировка значений">
                   <span>Метод sort()</span>
                 </a>
               </li>
               <li class="hero-menu__item">
-                <a class="hero-menu__link link js-scroll-link" href="#filter">
+                <a class="hero-menu__link link js-scroll-link" href="#filter" title="фильтрация значений">
                   <span>Метод filter()</span>
                 </a>
               </li>
               <li class="hero-menu__item">
-                <a class="hero-menu__link link js-scroll-link" href="#trim">
-                  <span>Методы trim(), replace() и replaceAll()</span>
+                <a class="hero-menu__link link js-scroll-link" href="#map" title="выведение значений в определённых условиях">
+                  <span>Метод map()</span>
                 </a>
               </li>
               <li class="hero-menu__item">
-                <a class="hero-menu__link link js-scroll-link" href="#">
-                  <span></span>
+                <a class="hero-menu__link link js-scroll-link" href="#includes" title="проверка наличия значения">
+                  <span>Метод includes()</span>
                 </a>
               </li>
               <li class="hero-menu__item">
-                <a class="hero-menu__link link js-scroll-link" href="#">
+                <a class="hero-menu__link link js-scroll-link" href="#trim" title="удаление пробелов">
+                  <span>Метод trim()</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#replace" title="замена всех или первого вхождения подстроки">
+                  <span>Метод replace()</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#replace-all" title="замена всех вхождений строки">
+                  <span>Метод replaceAll()</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#shift" title="удаление первого элемента, удаление последнего элемента">
+                  <span>Методы shift() и pop()</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#unshift" title="добавление элемента(ов) в начало массива, добавление элемента(ов) в конец массива">
+                  <span>Методы unshift() и push()</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#splice" title="удаление/замена/добавление элементов в определённые позиции">
+                  <span>Метод splice()</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#" title="#">
                   <span></span>
                 </a>
               </li>
@@ -75,7 +105,7 @@
           </nav>
         </div>
       </section>
-      <section id="..." class="section">
+      <section id="..." class="section hidden">
         <div class="section__container">
           <h2 class="section__title title">Остаточные параметры ...</h2>
           <div class="section__block section-block">
@@ -134,7 +164,7 @@ console.log(array);
           </div>
         </div>
       </section>
-      <section id="fill" class="section dark-page">
+      <section id="fill" class="section hidden dark-page">
         <div class="section__container">
           <h2 class="section__title title">Метод fill()</h2>
           <div class="section__block section-block">
@@ -149,8 +179,8 @@ arr.fill(value, start, end);
             </pre>
             <dl>
               <dd><span class="span-text">value</span> - значение, которым заполняются все элементы массива.</dd><br>
-              <dd><span class="span-text">start</span> (необязательный параметр) - индекс, с которого начинается заполнение. По умолчанию равен 0. Положительное число указывает сколько скрыть сначала слева. Отрицательное число указывает сколько показать с конца справа.</dd><br>
-              <dd><span class="span-text">end</span> (необязательный параметр) - индекс, до которого происходит заполнение. По умолчанию равен длине массива. Указывает индекс после которого скрывает последующие значения. Положительное число отсчёт сначала слева. Отрицательное число отсчёт с конца справа.</dd>
+              <dd><span class="span-text">start</span> (необязательный параметр) - индекс, с которого начинается заполнение. По умолчанию равен 0. <span title="Положительное число указывает сколько скрыть сначала массива. Отрицательное число указывает сколько показать с конца массива." class="js-methods-tooltip">!</span></dd><br>
+              <dd><span class="span-text">end</span> (необязательный параметр) - индекс, до которого происходит заполнение. По умолчанию равен длине массива. Указывает индекс после которого скрывает последующие значения. <span title="Положительное число отсчёт сначала массива. Отрицательное число отсчёт с конца массива." class="js-methods-tooltip">!</span></dd>
             </dl>
             <p class="section-block__text text">
               Примеры использования метода fill():
@@ -168,10 +198,15 @@ arr2.fill(0, 2, 4); <span class="com">// [1, 2, 0, 0, 5]</span>
             <p class="section-block__text text">
               Метод <span class="span-text">fill()</span> также поддерживается в массивоподобных объектах, таких как строка (тип String) или псевдомассив аргументов функции (тип arguments).
             </p>
+            <pre class="section-block__pre pre">
+const array = new Array(5).fill('oppo', 2, -2);
+
+console.log(array); <span class="com">// [,,'oppo',,]</span>
+            </pre>
           </div>
         </div>
       </section>
-      <section id="sort" class="section">
+      <section id="sort" class="section hidden">
         <div class="section__container">
           <h2 class="section__title title">Метод sort()</h2>
           <div class="section__block section-block">
@@ -181,7 +216,7 @@ arr2.fill(0, 2, 4); <span class="com">// [1, 2, 0, 0, 5]</span>
             <a class="section-block__link" href="https://jsbin.com/zukozik/edit?js,console" target="_blank">
               Ссылка на способы дублирования массива.
             </a>
-            <ol class="section-block__list">
+            <ol class="section-block__list section-block__list--numbs">
               <li class="section-block__item">
                 <p class="section-block__text text">
                   <span class="span-text">sort()</span> &mdash;&nbsp;без заданных параметров сортирует как строки посимвольно.
@@ -324,7 +359,31 @@ console.log(users);
                 </pre>
               </li>
               <li class="section-block__item">
-                <p class="section-block__text text"></p>
+                <p class="section-block__text text">
+                  <b>Назначение и удаление определённых значений</b>
+                </p>
+                <pre class="section-block__pre pre">
+const a = [1,2,3,4,5];
+
+const b = [...a];
+
+b[7] = 2.5;
+
+b[9] = 9.8;
+
+delete b[7];
+
+const c = b.slice().sort((a, b) =&gt; {
+  return a - b;
+});
+
+console.log(c); <span class="com">// [1,2,3,4,5,9.8,,,,]</span>
+                </pre>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  <b>Более сложный вариант сортировки от MaxGraph</b>
+                </p>
                 <pre class="section-block__pre pre">
 let arr = [
   {name: "John", age: 74},
@@ -361,19 +420,54 @@ console.log(sortUsers(arr, "name", true));
           </div>
         </div>
       </section>
-      <section id="filter" class="section dark-page">
+      <section id="filter" class="section hidden dark-page">
         <div class="section__container">
           <h2 class="section__title title">Метод filter()</h2>
           <div class="section__block section-block">
             <h3 class="section-block__title title"></h3>
-            <p class="section-block__text text"></p>
+            <p class="section-block__text text">
+              Метод <span class="span-text">filter()</span> в JavaScript позволяет фильтровать элементы массива и возвращать только те элементы, которые соответствуют заданному условию. Он принимает на вход callback-функцию, которая задает условие для фильтрации элементов массива.
+            </p>
+            <p class="section-block__text text">
+              Функция <span class="span-text">filter()</span> не изменяет оригинальный массив, а возвращает новый массив, содержащий отфильтрованные элементы.
+            </p>
+            <p class="section-block__text text">
+              Синтаксис метода <span class="span-text">filter()</span> выглядит следующим образом:
+            </p>
+            <pre class="section-block__pre pre">
+const newArray = array.filter((currentValue, index, arr) =&gt; {
+  <span class="com">// тело функции</span>
+});
+            </pre>
+            <ul class="section-block__list">
+              где:
+              <li class="section-block__item">
+                <span class="span-text">array</span> - исходный массив;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">currentValue</span> - текущий элемент массива;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">index (опциональный)</span> - индекс текущего элемента массива;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">arr (опциональный)</span> - ссылка на исходный массив;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">newArray</span> - новый массив, содержащий отфильтрованные элементы;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">callback</span> - функция, которая задает условие для отбора элементов.
+              </li>
+            </ul>
+            <p class="section-block__text text">Примеры использования метода <span class="span-text">filter()</span>:</p>
             <pre class="section-block__pre pre">
 const a = [3, 5, 81, 3984, 7, 3, 85, 98, 6, 27, 95];
 
 let b = a.filter((item) <span class="com">/* параметр */</span> =&gt; {
-  if (item &lt; 81) return true; <span class="com">// необходимо указывать true, чтобы не выпал false</span>
+  if (item &lt;= 81) return true; <span class="com">// необходимо указывать true, чтобы не выпал false</span>
 });
-console.log(b);
+console.log(b); <span class="com">// [81,3984,85,98,95]</span>
             </pre>
           </div>
           <div class="section__block section-block">
@@ -394,6 +488,13 @@ let debts = clients
   .filter((item) =&gt; item.debt &gt;= 10) <span class="com">// выбрать должников</span>
   .sort((a, b) =&gt; b.debt - a.debt); <span class="com">// сортировка выбранных должников</span>
 console.log(debts);
+<span class="com">
+  [
+    {"lin": "3df5b4df3", "user": "Rmeth", "debt": 42435},
+    {"lin": "645d6b4d6", "user": "Hmoth", "debt": 2654},
+    {"lin": "6db5d99fb", "user": "Math", "debt": 1684}
+  ]
+</span>
             </pre>
           </div>
           <div class="section__block section-block">
@@ -406,64 +507,661 @@ const namesChange = names.filter(function (name) {
   return name.length &lt; 5;
 });
 
-console.log(namesChange);
+console.log(namesChange); <span class="com">// ['Oleg','Anna']</span>
             </pre>
           </div>
         </div>
       </section>
-      <section id="#trim" class="section">
+      <section id="map" class="section hidden">
         <div class="section__container">
-          <h2 class="section__title title">Методы trim(), replace() и replaceAll()</h2>
+          <h2 class="section__title title">Метод map()</h2>
           <div class="section__block section-block">
-            <h3 class="section-block__title title">Метод trim()</h3>
+            <h3 class="section-block__title title"></h3>
             <p class="section-block__text text">
-              Метод trim() удаляет пробелы в начале и в конце строки.
+              Метод <span class="span-text">map()</span> в&nbsp;JavaScript&nbsp;&mdash; это метод массива, который принимает в&nbsp;качестве аргументов функцию обратного вызова (callback) и&nbsp;используется для преобразования каждого элемента массива.
+            </p>
+            <p class="section-block__text text">Синтаксис:</p>
+            <pre class="section-block__pre pre">
+array.map(callback(currentValue, index, arr), thisArg)
+            </pre>
+            <ul class="section-block__list">
+              <li class="section-block__item">
+                <span class="span-text">callback</span> - функция, которая будет вызвана для каждого элемента массива. Она принимает три аргумента: <span class="span-text">currentValue</span>, <span class="span-text">index</span> и <span class="span-text">array</span>;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">currentValue</span> - текущий обрабатываемый элемент массива;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">index</span> - индекс текущего элемента;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">arr</span> - индекс текущего элемента;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">thisArg (необязательный)</span> - значение, используемое в качестве `this` внутри функции callback.
+              </li>
+            </ul>
+            <pre class="section-block__pre pre">
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let b = a.map((currentValue, index, array) =&gt; {
+  return (currentValue * 2 - 1) * 3;
+});
+
+console.log(b); <span class="com">// [3,9,15,21,27,33,39,45,51]</span>
+            </pre>
+            <pre class="section-block__pre pre">
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let c = a.map((currentValue, index, array) =&gt; {
+  return (currentValue += 1);
+});
+
+console.log(c); <span class="com">// [2,3,4,5,6,7,8,9,10]</span>
+            </pre>
+            <pre class="section-block__pre pre">
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let d = a.map((currentValue, index, array) =&gt; {
+  console.log(index); <span class="com">// 0 1 2 3 4 5 6 7 8</span>
+  return currentValue;
+});
+            </pre>
+            <pre class="section-block__pre pre">
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let e = a.map((currentValue, index, array) =&gt; {
+  console.log(array); <span class="com">// [1,2,3,4,5,6,7,8,9] - возвращается столько раз, сколько элементов в массиве</span>
+  return currentValue;
+});
+            </pre>
+            <pre class="section-block__pre pre">
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let f = [...a];
+
+f[11] = 28;
+
+f.push(34);
+
+delete f[11];
+
+let j = f.map((currentValue, index, array) =&gt; {
+  return (currentValue * 2 - 1) * 3;
+});
+
+console.log(j); <span class="com">// [3,9,15,21,27,33,39,45,51,,,,201]</span>
+            </pre>
+            <pre class="section-block__pre pre">
+const students = [
+  { name: "Василий", age: 18 },
+  { name: "Геннадий", age: 23 },
+  { name: "Андрей", age: 17 },
+  { name: "Тимофей", age: 29 },
+  { name: "Иннокентий", age: 17 }
+];
+
+console.log(students.map((student) =&gt; {
+  return student.name;
+})); <span class="com">// ["Василий", "Геннадий", "Андрей", "Тимофей", "Иннокентий"]</span>
+            </pre>
+            <p class="section-block__text text">
+              Метод <span class="span-text">map()</span> создает новый массив с результатом выполнения функции callback для каждого элемента из исходного массива.
+            </p>
+            <p class="section-block__text text">
+              Новый массив будет иметь ту же длину, что и исходный массив, но каждый элемент будет изменен согласно результату функции callback.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="includes" class="section hidden dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">Метод includes()</h2>
+          <div class="section__block section-block">
+            <p class="section-block__text text">
+              Метод <span class="span-text">includes()</span> в JavaScript используется для определения, содержит ли массив или строка определенное значение, и возвращает булево значение true или false.
+            </p>
+            <br>
+            <p class="section-block__text text">
+              <b>Синтаксис метода для массива:</b>
+            </p>
+            <pre class="section-block__pre pre">
+arr.includes(valueToFind, fromIndex)
+            </pre>
+            <ul class="section-block__list">
+              где:
+              <li class="section-block__item">
+                <span class="span-text">valueToFind</span> - значение, которое нужно найти в массиве;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">fromIndex (необязательный параметр)</span> - индекс, начиная с которого нужно начать поиск.
+              </li>
+            </ul>
+            <p class="section-block__text text">
+              Если <span class="span-text">fromIndex</span> не указан, поиск начинается с 0.
+            </p>
+            <p class="section-block__text text">
+              Если <span class="span-text">fromIndex</span> отрицательное число, поиск будет производиться с конца массива.
+            </p>
+            <br>
+            <p class="section-block__text text">
+              <b>Синтаксис метода для строк:</b>
+            </p>
+            <pre class="section-block__pre pre">
+str.includes(searchString, position)
+            </pre>
+            <ul class="section-block__list">
+              где:
+              <li class="section-block__item">
+                <span class="span-text">searchString</span> - строка, которую нужно найти в другой строке;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">position (необязательный параметр)</span> - позиция в строке, начиная с которой нужно начать поиск.
+              </li>
+            </ul>
+            <p class="section-block__text text">
+              Если <span class="span-text">position</span> не указан, поиск начинается с 0.
+            </p>
+            <br>
+            <p class="section-block__text text">
+              Пример использования метода <span class="span-text">includes()</span> для массива:
+            </p>
+            <pre class="section-block__pre pre">
+const arr = [1, 2, 3, 4, 5];
+console.log(arr.includes(3)); <span class="com">// true</span>
+console.log(arr.includes(6)); <span class="com">// false</span>
+console.log(arr.includes(2, 2)); <span class="com">// false</span>
+console.log(arr.includes(2, -3)); <span class="com">// true</span>
+            </pre>
+            <pre class="section-block__pre pre">
+const users = [
+  { name: "алексей", age: 26 },
+  { name: "степан", age: 19 },
+  { name: "екатерина", age: 22 },
+  { name: "тимофей", age: 27 },
+  { name: "оксана", age: 25 },
+  { name: "тимур", age: 29 },
+  { name: "светлана", age: 21 }
+];
+
+const newUsers = users.filter((value) =&gt; {
+  return value.name.includes("ти");
+});
+
+console.log(newUsers);
+<span class="com">
+[
+  {"name": "тимофей", "age": 27},
+  {"name": "тимур", "age": 29}
+]
+</span>
+            </pre>
+            <br>
+            <p class="section-block__text text">
+              Пример использования метода <span class="span-text">includes()</span> для строки:
+            </p>
+            <pre class="section-block__pre pre">
+const str = "Hello, World!";
+console.log(str.includes("l")); <span class="com">// true</span>
+console.log(str.includes("Wor")); <span class="com">// true</span>
+console.log(str.includes("wor")); <span class="com">// false</span>
+console.log(str.includes("l", 3)); <span class="com">// true</span>
+            </pre>
+            <hr>
+            <p class="section-block__text text">
+              <strong>Функция эмулированная под метод includes()</strong>
+            </p>
+            <p class="section-block__text text">HTML</p>
+            <pre class="section-block__pre pre">
+&lt;input type="text" placeholder="Введите число"&gt;
+
+&lt;button type="button" style="cursor: pointer;" class="btn"&gt;BUTTON&lt;/button&gt;
+
+&lt;p class="value"&gt;&lt;/p&gt;
+            </pre>
+            <p class="section-block__text text">JS</p>
+            <pre class="section-block__pre pre">
+const btn = document.querySelector(".btn");
+
+function funcIncludes() {
+  const numbs = [87, 35, 46, 91, 32];
+  <span class="com">// значение инпута</span>
+  let inputValue = +document.querySelector("input").value;
+  let res = false;
+
+  <span class="com">// перебор и сравнение значения массива со значением инпута</span>
+  for (let i = 0; i &gt; numbs.length; i++) {
+    if (inputValue == numbs[i]) {
+      res = true;
+      break;
+    }
+  }
+  <span class="com">// вывод результата функции</span>
+  document.querySelector(".value").innerHTML = res;
+}
+
+btn.addEventListener("click", (e) =&lt; {
+  e.preventDefault();
+  funcIncludes();
+  inputValue = "";
+});
+            </pre>
+          </div>
+        </div>
+      </section>
+      <section id="trim" class="section hidden">
+        <div class="section__container">
+          <h2 class="section__title title">Метод trim()</h2>
+          <div class="section__block section-block">
+            <p class="section-block__text text">
+              Метод <span class="span-text">trim()</span> удаляет пробелы в начале и в конце строки.
             </p>
             <pre class="section-block__pre pre">
 const str = <span class="span-text">'   some text     '</span>;
 
 console.log(str.trim()); <span class="com">// some text</span>
             </pre>
-          </div>
-          <div class="section__block section-block">
-            <h3 class="section-block__title title">Метод replace()</h3>
             <p class="section-block__text text">
-              Удаляет все пробелы в строке, передав ему первым аргументом <span class="span-text">/\\s/g</span>, а вторым пустую строку <span class="span-text">""</span>.
+              Он возвращает новую строку, в которой все пробелы в начале и конце исходной строки удалены. При этом исходная строка остается неизменной.
+            </p>
+            <p class="section-block__text text">
+              Пример использования метода <span class="span-text">trim()</span>:
+            </p>
+            <pre class="section-block__pre pre">
+let str = "   Привет, мир!   ";
+let trimmedStr = str.trim();
+
+console.log(trimmedStr); <span class="com">// "Привет, мир!"</span>
+            </pre>
+            <p class="section-block__text text">
+              В данном примере метод <span class="span-text">trim()</span> удаляет все пробелы, находящиеся в начале и конце строки " Привет, мир! ", возвращая новую строку "Привет, мир!".
+            </p>
+            <p class="section-block__text text">
+              Метод <span class="span-text">trim()</span> полезен, когда необходимо удалить лишние пробелы в значении, введенном пользователем, или при сравнении строк, когда пробелы в начале и конце не играют роли, но могут повлиять на результат сравнения.
+            </p>
+            <p class="section-block__text text">
+              Также существуют вариации метода <span class="span-text">trim()</span>, такие как <span class="span-text">trimStart()</span> (для удаления пробелов в начале строки) и <span class="span-text">trimEnd()</span> (для удаления пробелов в конце строки), введенные с выпуском стандарта ECMAScript 2019 (ES10). Эти методы могут быть полезны в случаях, когда требуется удалить пробелы только в определенной части строки.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="replace" class="section hidden dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">Метод replace()</h2>
+          <div class="section__block section-block">
+            <hr>
+            <p class="section-block__text text">
+              С помощью метода <span class="span-text">replace()</span> возможно удалить все пробелы в строке, передав ему первым аргументом <span class="span-text">/\\s/g</span>, а вторым пустую строку <span class="span-text">""</span>.
             </p>
             <pre class="section-block__pre pre">
 const text = <span class="span-text">'   Это текст, из которого мы хотим удалить      все пробелы .     '</span>;
 
 console.log(text.replace(/\\s/g, '')); <span class="com">// Этотекст,изкоторогомыхотимудалитьвсепробелы.</span>
             </pre>
-          </div>
-          <div class="section__block section-block">
-            <h3 class="section-block__title title">Метод replaceAll()</h3>
+            <hr>
+            <br><br><br>
             <p class="section-block__text text">
-              Удаляет все пробелы в строке, передав ему первым аргументом пробел <span class="span-text">" "</span>, а вторым пустую строку <span class="span-text">""</span>.
+              Метод <span class="span-text">replace()</span> в JavaScript используется для замены всех или первого вхождения подстроки в строке на другую подстроку.
+            </p>
+            <p class="section-block__text text">
+              Синтаксис метода:
+            </p>
+            <pre class="section-block__pre pre">
+string.replace(searchValue, replaceValue)
+            </pre>
+            <ul class="section-block__list">
+              <li class="section-block__item">
+                <span class="span-text">searchValue</span>: это строка или регулярное выражение, которое нужно найти и заменить в исходной строке.
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">replaceValue</span>: это строка, которой нужно заменить найденное значение
+              </li>
+            </ul>
+            <p class="section-block__text text">
+              Метод <span class="span-text">replace()</span> возвращает новую строку, в которой все вхождения <span class="span-text">searchValue</span> заменены на <span class="span-text">replaceValue</span>. Обратите внимание, что метод <span class="span-text">replace()</span> не изменяет оригинальную строку, а возвращает новую строку, на которую можно ссылаться.
+            </p>
+            <p class="section-block__text text">
+              Параметр <span class="span-text">searchValue</span> может быть как строкой, так и регулярным выражением. Если <span class="span-text">searchValue</span> является строкой, то метод заменяет только первое вхождение строки в исходной строке. Если <span class="span-text">searchValue</span> является регулярным выражением с флагом g (глобальный поиск), то метод заменяет все вхождения регулярного выражения в исходной строке.
+            </p>
+            <p class="section-block__text text">
+              Если параметр <span class="span-text">replaceValue</span> является строкой, то метод заменяет искомое значение на эту строку. Дополнительно, внутри строки <span class="span-text">replaceValue</span> можно использовать специальные символы, такие как $1, $2, которые будут заменены на соответствующие найденные группы в регулярном выражении.
+            </p>
+            <p class="section-block__text text">
+              Кроме того, вместо строки <span class="span-text">replaceValue</span>, можно передать функцию обратного вызова <span class="span-text">(callback function)</span>. Тогда эта функция будет вызываться для каждого найденного значения, и ей будет передано найденное значение. Затем, значение, возвращенное функцией, будет использовано в качестве замены. Это позволяет осуществлять более сложные преобразования строк.
+            </p>
+            <p class="section-block__text text">
+              Вот несколько примеров использования метода <span class="span-text">replace()</span>:
+            </p>
+            <pre class="section-block__pre pre">
+const str = 'Hello world!';
+const newStr = str.replace('world', 'John');
+
+console.log(newStr); <span class="com">// Hello John!</span>
+            </pre>
+            <p class="section-block__text text">
+              В первом примере заменяем слово 'world' на 'John'.
+            </p>
+            <pre class="section-block__pre pre">
+const str2 = 'Hello world, world!';
+const newStr2 = str2.replace(/world/g, 'John');
+
+console.log(newStr2); <span class="com">// Hello John, John!</span>
+            </pre>
+            <p class="section-block__text text">
+              Во втором примере делаем то же самое, но с использованием регулярного выражения и флага g (глобального поиска).
+            </p>
+            <pre class="section-block__pre pre">
+const str3 = '1 apple, 2 bananas, 3 cucumbers';
+const newStr3 = str3.replace(/\d+ (\w+)/g, function(match, capturedGroup) {
+  return capturedGroup.toUpperCase();
+});
+
+console.log(newStr3); <span class="com">// 1 APPLE, 2 BANANAS, 3 CUCUMBERS</span>
+            </pre>
+            <p class="section-block__text text">
+              В третьем примере заменяем все вхождения строки вида "число слово" на прописное слово при помощи функции обратного вызова.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="replace-all" class="section hidden">
+        <div class="section__container">
+          <h2 class="section__title title">Метод replaceAll()</h2>
+          <div class="section__block section-block">
+            <hr>
+            <p class="section-block__text text">
+              С помощью метода <span class="span-text">replaceAll()</span> возможно удалить все пробелы в строке, передав ему первым аргументом пробел <span class="span-text">" "</span>, а вторым пустую строку <span class="span-text">""</span>.
             </p>
             <pre class="section-block__pre pre">
 const text = <span class="span-text">'   Это текст, из которого мы хотим удалить      все пробелы .     '</span>;
 
 console.log(text.replaceAll(' ', '')); <span class="com">// Этотекст,изкоторогомыхотимудалитьвсепробелы.</span>
             </pre>
+            <hr>
+            <br><br><br>
+            <p class="section-block__text text">
+              Метод <span class="span-text">replaceAll()</span> в JavaScript используется для замены всех вхождений строки на другую строку. Он работает с помощью регулярного выражения, что позволяет заменять все соответствующие шаблону совпадения.
+            </p>
+            <p class="section-block__text text">
+              Синтаксис метода:
+            </p>
+            <pre class="section-block__pre pre">
+string.replaceAll(searchValue, replaceValue)
+            </pre>
+            <ul class="section-block__list">
+              <li class="section-block__item">
+                <span class="span-text">searchValue</span> - строка или регулярное выражение, которое нужно найти и заменить.
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">replaceValue</span> - строка, которой заменяют найденные совпадения.
+              </li>
+            </ul>
+            <p class="section-block__text text">
+              Например, чтобы заменить все пробелы в строке на дефисы, можно использовать следующий код:
+            </p>
+            <pre class="section-block__pre pre">
+let str = "Привет мир";
+let newStr = str.replaceAll(" ", "-");
+
+console.log(newStr); <span class="com">// Вывод: "Привет-мир"</span>
+            </pre>
+            <p class="section-block__text text">
+              Метод <span class="span-text">replaceAll()</span> заменяет все пробелы на дефисы и создает новую строку, которая сохраняется в переменной <span class="span-text">newStr</span>.
+            </p>
+            <p class="section-block__text text">
+              Также, метод <span class="span-text">replaceAll()</span> может принимать регулярное выражение:
+            </p>
+            <pre class="section-block__pre pre">
+let str = "Метод replaceAll() заменяет. replaceAll регистрозависимый.";
+let newStr = str.replaceAll(/replaceAll/gi, "заменяет");
+
+console.log(newStr);
+<span class="com">// Вывод: "Метод заменяет() заменяет. заменяет регистрозависимый."</span>
+            </pre>
+            <p class="section-block__text text">
+              Важно отметить, что метод <span class="span-text">replaceAll()</span> возвращает новую строку, а не изменяет исходную. Поэтому рекомендуется сохранять результат в новой переменной.
+            </p>
           </div>
         </div>
       </section>
-      <!-- <section id="#" class="section">
+      <section id="shift" class="section hidden dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">Методы shift() и pop()</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">Метод shift()</h3>
+            <p class="section-block__text text">
+              Метод <span class="span-text">shift()</span> в JavaScript используется для удаления первого элемента из массива и возвращения его значения.
+            </p>
+            <p class="section-block__text text">
+              При этом все остальные элементы массива сдвигаются на одну позицию влево, каждый элемент занимает место своего предшественника.
+            </p>
+            <p class="section-block__text text">
+              Синтаксис метода:
+            </p>
+            <pre class="section-block__pre pre">
+array.shift()
+            </pre>
+            <p class="section-block__text text">
+              Метод не принимает параметров.
+            </p>
+            <p class="section-block__text text">
+              Он может быть вызван только для объекта-массива, для которого был вызван. Если массив пустой, метод возвращает значение undefined.
+            </p>
+            <p class="section-block__text text">Пример:</p>
+            <pre class="section-block__pre pre">
+var arr = [1, 2, 3, 4];
+var firstElement = arr.shift(); <span class="com">// удаляем первый элемент массива и сохраняем его значение в переменную</span>
+console.log(firstElement); // 1
+console.log(arr); <span class="com">// [2, 3, 4]</span>
+            </pre>
+            <p class="section-block__text text">
+              В этом примере мы создали массив [1, 2, 3, 4], затем вызвали метод shift() для этого массива.
+            </p>
+            <p class="section-block__text text">
+              Этот метод удалил первый элемент (1) и вернул его значение, которое мы сохранили в переменную firstElement.
+            </p>
+            <p class="section-block__text text">
+              Затем мы вывели значение первого элемента и массив без первого элемента.
+            </p>
+          </div>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">Метод pop()</h3>
+            <p class="section-block__text text">
+              Метод <span class="span-text">pop()</span> в JavaScript используется для удаления последнего элемента из массива и возвращает удаленный элемент.
+            </p>
+            <p class="section-block__text text">
+              Он изменяет исходный массив, удаляя последний элемент из него.
+            </p>
+            <p class="section-block__text text">Синтаксис метода:</p>
+            <pre class="section-block__pre pre">
+array.pop()
+            </pre>
+            <p class="section-block__text text"></p>
+            <pre class="section-block__pre pre">
+const array = [1, 2, 3, 4, 5];
+const lastElement = array.pop();
+console.log(lastElement); <span class="com">// Выведет 5</span>
+console.log(array); <span class="com">// Выведет [1, 2, 3, 4]</span>
+            </pre>
+            <p class="section-block__text text">
+              В данном примере метод <span class="span-text">pop()</span> удаляет последний элемент 5 из массива array и возвращает его значение. Затем последний элемент выводится на консоль. После выполнения метода массив array становится равен [1, 2, 3, 4].
+            </p>
+            <p class="section-block__text text">
+              Метод <span class="span-text">pop()</span> является обратной операцией для метода <span class="span-text">push()</span>, который добавляет элемент в конец массива. Оба метода можно комбинировать для управления элементами массива в его конце.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="unshift" class="section hidden">
+        <div class="section__container">
+          <h2 class="section__title title">Методы unshift() и push()</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">
+              Метод unshift()
+            </h3>
+            <p class="section-block__text text">
+              Метод <span class="span-text">unshift()</span> в JavaScript используется для добавления одного или нескольких элементов в начало массива.
+            </p>
+            <p class="section-block__text text">
+              Он изменяет исходный массив и возвращает новую длину массива.
+            </p>
+            <p class="section-block__text text">
+              Синтаксис метода:
+            </p>
+            <pre class="section-block__pre pre">
+array.unshift(item1, item2, ..., itemX)
+            </pre>
+            <p class="section-block__text text">
+              Метод может принимать один или более аргументов, которые будут добавлены в начало массива.
+            </p>
+            <p class="section-block__text text">
+              Он может быть вызван только для объекта-массива, для которого был вызван.
+            </p>
+            <p class="section-block__text text">
+              Пример использования:
+            </p>
+            <pre class="section-block__pre pre">
+let fruits = ['apple', 'banana', 'orange'];
+
+let newLength = fruits.unshift('pear', 'kiwi');
+console.log(newLength); <span class="com">// выводит 5</span>
+
+console.log(fruits); <span class="com">// выводит ['pear', 'kiwi', 'apple', 'banana', 'orange']</span>
+            </pre>
+            <p class="section-block__text text">
+              В этом примере мы создали массив [2, 3], затем вызвали метод <span class="span-text">unshift()</span> для этого массива, передав два элемента (0 и 1) в качестве аргументов.
+            </p>
+            <p class="section-block__text text">
+              Эти элементы были добавлены в начало массива, и метод вернул новую длину массива (4).
+            </p>
+            <p class="section-block__text text">
+              Затем мы вывели новую длину массива и сам массив.
+            </p>
+          </div>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">Метод push()</h3>
+            <p class="section-block__text text">
+              Метод <span class="span-text">push()</span> в JavaScript используется для добавления одного или нескольких элементов в конец массива.
+            </p>
+            <p class="section-block__text text">
+              Он изменяет исходный массив, добавляя новые элементы.
+            </p>
+            <p class="section-block__text text">
+              Синтаксис метода:
+            </p>
+            <pre class="section-block__pre pre">
+array.push(element1, element2, ..., elementN)
+            </pre>
+            <p class="section-block__text text">
+              Параметры: Метод <span class="span-text">push()</span> принимает неограниченное количество параметров, которые являются элементами, добавляемыми в конец массива.
+            </p>
+            <p class="section-block__text text">
+              Пример использования метода:
+            </p>
+            <pre class="section-block__pre pre">
+const array = [1, 2, 3, 4];
+array.push(5, 6);
+console.log(array); <span class="com">// Выведет [1, 2, 3, 4, 5, 6]</span>
+            </pre>
+            <p class="section-block__text text">
+              В данном примере метод <span class="span-text">push()</span> добавляет элементы 5 и 6 в конец массива array. После выполнения метода массив array становится равен [1, 2, 3, 4, 5, 6].
+            </p>
+            <p class="section-block__text text">
+              Метод <span class="span-text">push()</span> позволяет добавлять элементы в конец массива вместе с расширением его длины. Он полезен, когда вам нужно добавить новые элементы в конец массива, например, при добавлении новых элементов в список или при получении данных из внешнего источника.
+            </p>
+            <p class="section-block__text text">
+              Значение, возвращаемое методом <span class="span-text">push()</span>, является новой длиной массива после добавления элементов.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="splice" class="section hidden dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">Метод splice()</h2>
+          <div class="section__block section-block">
+            <p class="section-block__text text">
+              Метод <span class="span-text">splice()</span> в JavaScript используется для изменения содержимого массива путем удаления, замены или добавления элементов. Он изменяет исходный массив и возвращает новый массив, содержащий удаленные элементы (если есть).
+            </p>
+            <p class="section-block__text text">
+              Синтаксис метода:
+            </p>
+            <pre class="section-block__pre pre">
+array.splice(start, deleteCount, item1, item2, ...)
+            </pre>
+            <ul class="section-block__list">
+              <li class="section-block__item">
+                <span class="span-text">start</span>: Обязательный параметр. Определяет индекс позиции, с которой начинается изменение массива. Если значение отрицательное, то индекс начинается с конца массива, где -1 является последним элементом.
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">deleteCount</span>: Необязательный параметр. Определяет количество элементов, которые будут удалены из массива. Если не указано, будут удалены все элементы после <span class="span-text">start</span>.
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">item1, item2, ...</span>: Необязательные параметры. Элементы, которые будут добавлены в массив, начиная с позиции <span class="span-text">start</span>.
+              </li>
+            </ul>
+            <p class="section-block__text text">
+              Примеры использования метода:
+            </p>
+            <pre class="section-block__pre pre">
+const arr = [1,2,3,4,5,6,7,8,9];
+
+const array = arr.splice(3, 2, "pear", 'kiwi', 'apple', 'banana', 'orange');
+
+console.log(arr); <span class="com">// [1,2,3,"pear","kiwi","apple","banana","orange",6,7,8,9]</span>
+console.log(array); <span class="com">// [4,5]</span>
+            </pre>
+            <p class="section-block__text text">Добавление элементов в заданные позиции:</p>
+            <pre class="section-block__pre pre">
+const fruits = ['apple', 'blackberry', 'blueberry', 'date'];
+
+fruits.splice(2, 0, 'kiwi', 'lemon');
+console.log(fruits); <span class="com">// ['apple', 'blackberry', 'kiwi', 'lemon', 'blueberry', 'date']</span>
+            </pre>
+            <p class="section-block__text text">
+              Метод <span class="span-text">splice()</span> является мощным инструментом для манипуляций с массивами в JavaScript. Вы можете использовать его для удаления, замены и добавления элементов в массив, в зависимости от ваших потребностей.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- <section id="#" class="section hidden">
         <div class="section__container">
           <h2 class="section__title title">CAPTION</h2>
           <div class="section__block section-block">
             <h3 class="section-block__title title"></h3>
+            <ul class="section-block__list">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ul>
+            <ol class="section-block__list section-block__list--numbs">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ol>
             <p class="section-block__text text"></p>
             <pre class="section-block__pre pre"></pre>
           </div>
         </div>
       </section>
-      <section id="#" class="section dark-page">
+      <section id="#" class="section hidden dark-page">
         <div class="section__container">
           <h2 class="section__title title">CAPTION</h2>
           <div class="section__block section-block">
             <h3 class="section-block__title title"></h3>
+            <ul class="section-block__list">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ul>
+            <ol class="section-block__list section-block__list--numbs">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ol>
             <p class="section-block__text text"></p>
             <pre class="section-block__pre pre"></pre>
           </div>
