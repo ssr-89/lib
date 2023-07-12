@@ -22,7 +22,356 @@
 <body>
   <div id="wrapper" class="wrapper">
     <!-- @import "header.kit" -->
-    <main id="main" class="main"></main>
+    <main id="main" class="main">
+      <section id="js-hero" class="hero">
+        <div class="hero__container">
+          <h1 class="hero__title title">Операторы</h1>
+          <div class="hero__btns">
+            <button class="hero__burger btn">
+              <span></span>
+            </button>
+            <button class="theme-btn btn">
+              <span></span>
+            </button>
+          </div>
+          <nav class="hero__nav">
+            <ul class="hero__menu hero-menu list">
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#operand" title="Это то, к чему применяются операторы">
+                  <span>Что такое Оператор и Операнд?</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#spread" title="дублирование массива/объекта">
+                  <span>Оператор spread <span>...</span></span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#" title="#">
+                  <span></span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#" title="#">
+                  <span></span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#" title="#">
+                  <span></span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#" title="#">
+                  <span></span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+      <section id="operand" class="section hidden dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">Что такое Оператор и Операнд?</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">Операнд</h3>
+            <p class="section-block__text text">
+              Операнд в JavaScript - это значение, над которым выполняется операция.
+            </p>
+            <p class="section-block__text text">
+              Операнды могут быть литералами (например, числами или строками) или переменными.
+            </p>
+            <p class="section-block__text text">
+              Операнды могут использоваться в различных операциях, таких как арифметические операции, операции сравнения, операции присваивания и т. д.
+            </p>
+            <pre class="section-block__pre pre">
+alert(y - x); <span class="com">// y и x операнды</span>
+            </pre>
+            <hr>
+          </div>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">Оператор</h3>
+            <p class="section-block__text text">
+              В JavaScript оператор - это символ или комбинация символов, который выполняет определенное действие над операндами.
+            </p>
+            <p class="section-block__text text">
+              Операторы в JavaScript используются для выполнения различных операций, таких как присваивание, арифметика, сравнение, логика и т. д.
+            </p>
+            <ol class="section-block__list section-block__list--numbs">
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  <strong>Арифметические операторы:</strong>
+                </p>
+                <p class="section-block__text text">- Сложение: <span class="span-text">+</span></p>
+                <p class="section-block__text text">- Вычитание: <span class="span-text">-</span></p>
+                <p class="section-block__text text">- Умножение: <span class="span-text">*</span></p>
+                <p class="section-block__text text">- Деление: <span class="span-text">/</span></p>
+                <p class="section-block__text text">- Остаток от деления: <span class="span-text">%</span></p>
+                <p class="section-block__text text">- Инкремент: <span class="span-text">++</span></p>
+                <p class="section-block__text text">- Декремент: <span class="span-text">--</span></p>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  <strong>Операторы присваивания:</strong>
+                </p>
+                <p class="section-block__text text">- Присваивание: <span class="span-text">=</span></p>
+                <p class="section-block__text text">- Присваивание с добавлением: <span class="span-text">+=</span></p>
+                <p class="section-block__text text">- Присваивание с вычитанием: <span class="span-text">-=</span></p>
+                <p class="section-block__text text">- Присваивание с умножением: <span class="span-text">*=</span></p>
+                <p class="section-block__text text">- Присваивание с делением: <span class="span-text">/=</span></p>
+                <p class="section-block__text text">- Присваивание с остатком от деления: <span class="span-text">%=</span></p>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  <strong>Операторы сравнения:</strong>
+                </p>
+                <p class="section-block__text text">- Равно: <span class="span-text">==</span></p>
+                <p class="section-block__text text">- Не равно: <span class="span-text">!=</span></p>
+                <p class="section-block__text text">- Строгое равно: <span class="span-text">===</span></p>
+                <p class="section-block__text text">- Строгое не равно: <span class="span-text">!==</span></p>
+                <p class="section-block__text text">- Больше: <span class="span-text">&gt;</span></p>
+                <p class="section-block__text text">- Меньше: <span class="span-text">&lt;</span></p>
+                <p class="section-block__text text">- Больше или равно: <span class="span-text">&gt;=</span></p>
+                <p class="section-block__text text">- Меньше или равно: <span class="span-text">&lt;=</span></p>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  <strong>Логические операторы:</strong>
+                </p>
+                <p class="section-block__text text">- И: <span class="span-text">&&</span></p>
+                <p class="section-block__text text">- Или: <span class="span-text">||</span></p>
+                <p class="section-block__text text">- Не: <span class="span-text">!</span></p>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  <strong>Тернарный оператор:</strong>
+                </p>
+                <p class="section-block__text text">- Условие <span class="span-text">? выражение1 : выражение2</span></p>
+              </li>
+            </ol>
+            <p class="section-block__text text">
+              Операторы в JavaScript используются для выполнения различных операций в контексте программирования.
+            </p>
+            <p class="section-block__text text">
+              Они играют важную роль в написании эффективного и функционального кода.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="spread" class="section hidden">
+        <div class="section__container">
+          <h2 class="section__title title">Оператор spread ...</h2>
+          <div class="section__block section-block">
+            <p class="section-block__text text">
+              <span class="span-text">Spread</span> оператор в&nbsp;JavaScript представляет собой троеточие перед итерируемым значением, таким как массив или объект.
+            </p>
+            <p class="section-block__text text">
+              Он&nbsp;используется для &laquo;распаковывания&raquo; значений из&nbsp;массива или объекта и&nbsp;передачи их&nbsp;в&nbsp;другой контекст, например, при объявлении переменных или передаче аргументов в&nbsp;функцию.
+            </p>
+            <ol class="section-block__list section-block__list--numbs">
+              <p class="section-block__text text">
+                Примеры использования оператора <span class="span-text">Spread</span>
+              </p>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  Преобразование массива в объект
+                </p>
+                <pre class="section-block__pre pre">
+const cars = ["BMW", "Volvo", "Lada"];
+
+const object = { ...cars };
+
+console.log(object); <span class="com">// {"0": "BMW", "1": "Volvo", "2": "Lada",}</span>
+                </pre>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  Также возможно скопировать данные одного массива в другой
+                </p>
+                <pre class="section-block__pre pre">
+const cars = [ "BMW", "Volvo", "Lada" ];
+
+const arr = [...cars];
+
+console.log(arr); <span class="com">// [ "BMW", "Volvo", "Lada" ]</span>
+                </pre>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  Либо объект в другой объект
+                </p>
+                <pre class="section-block__pre pre">
+const cars = { brand1: "BMW", brand2: "Volvo", brand3: "Lada" };
+
+const arr = {...cars};
+
+console.log(arr); <span class="com">// { brand1: "BMW", brand2: "Volvo", brand3: "Lada" }</span>
+                </pre>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  Копирование массива с объектами с указанными различными значениями
+                </p>
+                <pre class="section-block__pre pre">
+const arr = [
+  {name: "John", age: 74},
+  {name: "Alex", age: 6},
+  {name: "Anna", age: 28},
+  {name: "Kate", age: 17},
+  {name: "Ivan", age: 32},
+  {name: "Petro", age: 41}
+];
+
+const array = {...arr};
+
+console.log(array);
+<span class="com">
+{
+  "0": {"name": "John", "age": 74},
+  "1": {"name": "Alex", "age": 6},
+  "2": {"name": "Anna", "age": 28},
+  "3": {"name": "Kate", "age": 17},
+  "4": {"name": "Ivan", "age": 32},
+  "5": {"name": "Petro", "age": 41}
+}</span>
+                </pre>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  Объединение массивов/объектов
+                </p>
+                <pre class="section-block__pre pre">
+const array1 = [1, 2, 3];
+const array2 = [4, 5, 6];
+const mergedArray = [...array1, ...array2];
+
+console.log(mergedArray); <span class="com">// [1, 2, 3, 4, 5, 6]</span>
+
+
+
+const obj1 = { a: 1, b: 2 };
+const obj2 = { c: 3, d: 4 };
+const mergedObj = { ...obj1, ...obj2 };
+
+console.log(mergedObj); <span class="com">// { a: 1, b: 2, c: 3, d: 4 }</span>
+                </pre>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  Сложение аргументов функции, которые распакованы из массива
+                </p>
+                <pre class="section-block__pre pre">
+function sum(a, b, c) {
+  return a + b + c;
+}
+
+const numbers = [1, 2, 3];
+console.log(sum(...numbers)); <span class="com">// 6</span>
+                </pre>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  Преобразование в массив, используя аргументы в функции
+                </p>
+                <pre class="section-block__pre pre">
+function test() {
+  console.log([...arguments]);
+}
+
+test(3, 4, 5, 6, 7); <span class="com">// [3,4,5,6,7]</span>
+                </pre>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  Преобразование в массив для полноценной работы
+                </p>
+                <pre class="section-block__pre pre">
+<span class="com">/* HTML */</span>
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+
+<span class="com">/* JS */</span>
+let p = document.querySelectorAll("p");
+
+console.log(p); <span class="com">// NodeList(4) [p, p, p, p] - псевдомассив</span>
+
+console.log([...p]); <span class="com">// (4) [p, p, p, p] - полноценный массив</span>
+                </pre>
+                <p class="section-block__text text">
+                  <span class="span-text">Node List</span> является псевдомассивом, но к нему можно применять некоторые методы массива, такие как <a href="js-methods.html/#foreach">forEach</a>, <a href="js-methods.html/#map">map</a> и <a href="js/methods.html#filter">filter</a>, используя метод <span class="span-text">Array.from()</span> или <span class="span-text">Array.prototype.slice.call()</span> для преобразования его в обычный массив.
+                </p>
+              </li>
+              <li class="section-block__item">
+                <p class="section-block__text text">
+                  Преобразование в массив вместе с конструктуром <span class="span-text">new Set()</span>
+                </p>
+                <pre class="section-block__pre pre">
+const f = [
+  ...new Set([1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 10])
+];
+console.log(f); <span class="com">// [1,2,3,4,5,6,7,8,9,10]</span>
+                </pre>
+                <p class="section-block__text text">
+                  Каждое значение в <span class="span-text">new Set()</span> может быть добавлено только один раз, и оно будет автоматически отсортировано в порядке добавления.
+                </p>
+              </li>
+            </ol>
+            <p class="section-block__text text">
+              Spread оператор также может использоваться для создания новых массивов или объектов на основе существующих значений.
+            </p>
+            <p class="section-block__text text">
+              Это полезно, когда вы хотите изменить или модифицировать существующие данные, не изменяя их напрямую.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="#" class="section hidden dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">CAPTION</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title"></h3>
+            <ul class="section-block__list">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ul>
+            <ol class="section-block__list section-block__list--numbs">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ol>
+            <p class="section-block__text text"></p>
+            <pre class="section-block__pre pre"></pre>
+          </div>
+        </div>
+      </section>
+      <!-- <section id="#" class="section hidden dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">CAPTION</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title"></h3>
+            <ul class="section-block__list">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ul>
+            <ol class="section-block__list section-block__list--numbs">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ol>
+            <p class="section-block__text text"></p>
+            <pre class="section-block__pre pre"></pre>
+          </div>
+        </div>
+      </section> -->
+    </main>
     <!-- @import "footer.kit" -->
   </div>
 </body>
