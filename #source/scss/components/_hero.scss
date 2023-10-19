@@ -123,6 +123,7 @@
     background-color: var(--menu-color);
     transform: translateX(-200%);
     transition: 0.3s ease-in-out;
+    // overflow: scroll;
 
     &.open-menu {
       transform: translateX(0);
@@ -131,6 +132,7 @@
 
   .hero-menu {
     height: 100%;
+    // overflow: auto;
 
     &__item {
       &:not(:last-child) {

@@ -350,11 +350,6 @@
                 </a>
               </li>
               <li class="hero-menu__item">
-                <a class="hero-menu__link link js-scroll-link" href="#map" title="выведение значений в определённых условиях">
-                  <span>Метод map()</span>
-                </a>
-              </li>
-              <li class="hero-menu__item">
                 <a class="hero-menu__link link js-scroll-link" href="#includes" title="проверка наличия значения">
                   <span>Метод includes()</span>
                 </a>
@@ -400,6 +395,16 @@
                 </a>
               </li>
               <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#map" title="выведение значений в определённых условиях">
+                  <span>Метод map()</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#flat" title="Разглажвание/сплющивание массивов">
+                  <span>Методы flat() и flatMap()</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
                 <a class="hero-menu__link link js-scroll-link" href="#" title="#">
                   <span></span>
                 </a>
@@ -423,8 +428,8 @@ arr.fill(value, start, end);
             </pre>
             <dl>
               <dd><span class="span-text">value</span> - значение, которым заполняются все элементы массива.</dd><br>
-              <dd><span class="span-text">start</span> (необязательный параметр) - индекс, с которого начинается заполнение. По умолчанию равен 0. <span title="Положительное число указывает сколько скрыть сначала массива. Отрицательное число указывает сколько показать с конца массива." class="js-methods-tooltip">!</span></dd><br>
-              <dd><span class="span-text">end</span> (необязательный параметр) - индекс, до которого происходит заполнение. По умолчанию равен длине массива. Указывает индекс после которого скрывает последующие значения. <span title="Положительное число отсчёт сначала массива. Отрицательное число отсчёт с конца массива." class="js-methods-tooltip">!</span></dd>
+              <dd><span class="span-text">start</span> (необязательный параметр) - индекс, с которого начинается заполнение. По умолчанию равен 0. <span title="Положительное число - это индекс после которого идёт заполнение. Отрицательное число указывает сколько значений заполнить с конца массива." class="js-methods-tooltip">!</span></dd><br>
+              <dd><span class="span-text">end</span> (необязательный параметр) - индекс, до которого происходит заполнение. По умолчанию равен длине массива. УМетод не включает этот элемент в заполнение. <span title="Отрицательное число отсчёт с конца массива, после которого идёт заполнение." class="js-methods-tooltip">!</span></dd>
             </dl>
             <p class="section-block__text text">
               Примеры использования метода fill():
@@ -728,16 +733,27 @@ const clients = [
   { lin: "645d6b4d6", user: "Hmoth", debt: 2654 }
 ];
 
+
+<span class="com">// короткий вариант</span>
 let debts = clients
-  .filter((item) =&gt; item.debt &gt;= 10) <span class="com">// выбрать должников</span>
-  .sort((a, b) =&gt; b.debt - a.debt); <span class="com">// сортировка выбранных должников</span>
+  .filter((item) =&gt; item.debt &gt;= 1500) <span class="com">// выбрать должников</span>
+  .sort((a, b) =&gt; b.user - a.user); <span class="com">// сортировка выбранных должников</span>
 console.log(debts);
+
+<span class="com">// длинный вариант</span>
+let debts = debtors.filter(function(item){
+  return item.debt >= 1500;
+}).sort(function(a, b){
+  return new Intl.Collator("ru-RU").compare(a.user, b.user);
+});
+<span class="com">// new Intl.Collator("ru-RU") - сортировка по русскому алфавиту</span>
+
 <span class="com">
-  [
-    {"lin": "3df5b4df3", "user": "Rmeth", "debt": 42435},
-    {"lin": "645d6b4d6", "user": "Hmoth", "debt": 2654},
-    {"lin": "6db5d99fb", "user": "Math", "debt": 1684}
-  ]
+[
+  {"lin": "645d6b4d6", "user": "Hmoth", "debt": 2654},
+  {"lin": "6db5d99fb", "user": "Math", "debt": 1684},
+  {"lin": "3df5b4df3", "user": "Rmeth", "debt": 42435}
+]
 </span>
             </pre>
           </div>
@@ -755,110 +771,8 @@ console.log(namesChange); <span class="com">// ['Oleg','Anna']</span>
             </pre>
           </div>
         </div>
-      </section>
-      <section id="map" class="section hidden">
-        <div class="section__container">
-          <h2 class="section__title title">Метод map()</h2>
-          <div class="section__block section-block">
-            <h3 class="section-block__title title"></h3>
-            <p class="section-block__text text">
-              Метод <span class="span-text">map()</span> в&nbsp;JavaScript&nbsp;&mdash; это метод массива, который принимает в&nbsp;качестве аргументов функцию обратного вызова (callback) и&nbsp;используется для преобразования каждого элемента массива.
-            </p>
-            <p class="section-block__text text">Синтаксис:</p>
-            <pre class="section-block__pre pre">
-array.map(callback(currentValue, index, arr), thisArg)
-            </pre>
-            <ul class="section-block__list">
-              <li class="section-block__item">
-                <span class="span-text">callback</span> - функция, которая будет вызвана для каждого элемента массива. Она принимает три аргумента: <span class="span-text">currentValue</span>, <span class="span-text">index</span> и <span class="span-text">array</span>;
-              </li>
-              <li class="section-block__item">
-                <span class="span-text">currentValue</span> - текущий обрабатываемый элемент массива;
-              </li>
-              <li class="section-block__item">
-                <span class="span-text">index</span> - индекс текущего элемента;
-              </li>
-              <li class="section-block__item">
-                <span class="span-text">arr</span> - индекс текущего элемента;
-              </li>
-              <li class="section-block__item">
-                <span class="span-text">thisArg (необязательный)</span> - значение, используемое в качестве `this` внутри функции callback.
-              </li>
-            </ul>
-            <pre class="section-block__pre pre">
-let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-let b = a.map((currentValue, index, array) =&gt; {
-  return (currentValue * 2 - 1) * 3;
-});
-
-console.log(b); <span class="com">// [3,9,15,21,27,33,39,45,51]</span>
-            </pre>
-            <pre class="section-block__pre pre">
-let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-let c = a.map((currentValue, index, array) =&gt; {
-  return (currentValue += 1);
-});
-
-console.log(c); <span class="com">// [2,3,4,5,6,7,8,9,10]</span>
-            </pre>
-            <pre class="section-block__pre pre">
-let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-let d = a.map((currentValue, index, array) =&gt; {
-  console.log(index); <span class="com">// 0 1 2 3 4 5 6 7 8</span>
-  return currentValue;
-});
-            </pre>
-            <pre class="section-block__pre pre">
-let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-let e = a.map((currentValue, index, array) =&gt; {
-  console.log(array); <span class="com">// [1,2,3,4,5,6,7,8,9] - возвращается столько раз, сколько элементов в массиве</span>
-  return currentValue;
-});
-            </pre>
-            <pre class="section-block__pre pre">
-let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-let f = [...a];
-
-f[11] = 28;
-
-f.push(34);
-
-delete f[11];
-
-let j = f.map((currentValue, index, array) =&gt; {
-  return (currentValue * 2 - 1) * 3;
-});
-
-console.log(j); <span class="com">// [3,9,15,21,27,33,39,45,51,,,,201]</span>
-            </pre>
-            <pre class="section-block__pre pre">
-const students = [
-  { name: "Василий", age: 18 },
-  { name: "Геннадий", age: 23 },
-  { name: "Андрей", age: 17 },
-  { name: "Тимофей", age: 29 },
-  { name: "Иннокентий", age: 17 }
-];
-
-console.log(students.map((student) =&gt; {
-  return student.name;
-})); <span class="com">// ["Василий", "Геннадий", "Андрей", "Тимофей", "Иннокентий"]</span>
-            </pre>
-            <p class="section-block__text text">
-              Метод <span class="span-text">map()</span> создает новый массив с результатом выполнения функции callback для каждого элемента из исходного массива.
-            </p>
-            <p class="section-block__text text">
-              Новый массив будет иметь ту же длину, что и исходный массив, но каждый элемент будет изменен согласно результату функции callback.
-            </p>
-          </div>
-        </div>
-      </section>
-      <section id="includes" class="section hidden dark-page">
+      </section>      
+      <section id="includes" class="section hidden">
         <div class="section__container">
           <h2 class="section__title title">Метод includes()</h2>
           <div class="section__block section-block">
@@ -993,7 +907,7 @@ btn.addEventListener("click", (e) =&lt; {
           </div>
         </div>
       </section>
-      <section id="trim" class="section hidden">
+      <section id="trim" class="section hidden dark-page">
         <div class="section__container">
           <h2 class="section__title title">Метод trim()</h2>
           <div class="section__block section-block">
@@ -1029,7 +943,7 @@ console.log(trimmedStr); <span class="com">// "Привет, мир!"</span>
           </div>
         </div>
       </section>
-      <section id="replace" class="section hidden dark-page">
+      <section id="replace" class="section hidden">
         <div class="section__container">
           <h2 class="section__title title">Метод replace()</h2>
           <div class="section__block section-block">
@@ -1108,7 +1022,7 @@ console.log(newStr3); <span class="com">// 1 APPLE, 2 BANANAS, 3 CUCUMBERS</span
           </div>
         </div>
       </section>
-      <section id="replace-all" class="section hidden">
+      <section id="replace-all" class="section hidden dark-page">
         <div class="section__container">
           <h2 class="section__title title">Метод replaceAll()</h2>
           <div class="section__block section-block">
@@ -1168,7 +1082,7 @@ console.log(newStr);
           </div>
         </div>
       </section>
-      <section id="shift" class="section hidden dark-page">
+      <section id="shift" class="section hidden">
         <div class="section__container">
           <h2 class="section__title title">Методы shift() и pop()</h2>
           <div class="section__block section-block">
@@ -1236,7 +1150,7 @@ console.log(array); <span class="com">// Выведет [1, 2, 3, 4]</span>
           </div>
         </div>
       </section>
-      <section id="unshift" class="section hidden">
+      <section id="unshift" class="section hidden dark-page">
         <div class="section__container">
           <h2 class="section__title title">Методы unshift() и push()</h2>
           <div class="section__block section-block">
@@ -1319,7 +1233,7 @@ console.log(array); <span class="com">// Выведет [1, 2, 3, 4, 5, 6]</span
           </div>
         </div>
       </section>
-      <section id="splice" class="section hidden dark-page">
+      <section id="splice" class="section hidden">
         <div class="section__container">
           <h2 class="section__title title">Метод splice()</h2>
           <div class="section__block section-block">
@@ -1367,7 +1281,7 @@ console.log(fruits); <span class="com">// ['apple', 'blackberry', 'kiwi', 'lemon
           </div>
         </div>
       </section>
-      <section id="indexof" class="section hidden">
+      <section id="indexof" class="section hidden dark-page">
         <div class="section__container">
           <h2 class="section__title title">Метод indexOf()</h2>
           <div class="section__block section-block">
@@ -1445,7 +1359,7 @@ console.log(index); <span class="com">// 7</span>
           </div>
         </div>
       </section>
-      <section id="split" class="section hidden dark-page">
+      <section id="split" class="section hidden">
         <div class="section__container">
           <h2 class="section__title title">Методы split() и join()</h2>
           <div class="section__block section-block">
@@ -1595,8 +1509,283 @@ console.log(result); <span class="com">// "abcd"</span>
               Метод <span class="span-text">join()</span> полезен при необходимости конвертировать массив в строку или создать CSV-файл.
             </p>
             <p class="section-block__text text">
-              Он также может быть использован с методом <span class="com">split()</span> для разбиения строки на массив элементов.
+              Он также может быть использован с методом <span class="span-text">split()</span> для разбиения строки на массив элементов.
             </p>
+          </div>
+        </div>
+      </section>
+      <section id="map" class="section hidden dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">Метод map()</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title"></h3>
+            <p class="section-block__text text">
+              Метод <span class="span-text">map()</span> в&nbsp;JavaScript&nbsp;&mdash; это метод массива, который принимает в&nbsp;качестве аргументов функцию обратного вызова (callback) и&nbsp;используется для преобразования каждого элемента массива.
+            </p>
+            <p class="section-block__text text">Синтаксис:</p>
+            <pre class="section-block__pre pre">
+array.map(callback(currentValue, index, arr), thisArg)
+            </pre>
+            <ul class="section-block__list">
+              <li class="section-block__item">
+                <span class="span-text">callback</span> - функция, которая будет вызвана для каждого элемента массива. Она принимает три аргумента: <span class="span-text">currentValue</span>, <span class="span-text">index</span> и <span class="span-text">array</span>;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">currentValue</span> - текущий обрабатываемый элемент массива;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">index</span> - индекс текущего элемента;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">arr</span> - индекс текущего элемента;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">thisArg (необязательный)</span> - значение, используемое в качестве `this` внутри функции callback.
+              </li>
+            </ul>
+            <pre class="section-block__pre pre">
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let b = a.map((currentValue, index, array) =&gt; {
+  return (currentValue * 2 - 1) * 3;
+});
+
+console.log(b); <span class="com">// [3,9,15,21,27,33,39,45,51]</span>
+            </pre>
+            <pre class="section-block__pre pre">
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let c = a.map((currentValue, index, array) =&gt; {
+  return (currentValue += 1);
+});
+
+console.log(c); <span class="com">// [2,3,4,5,6,7,8,9,10]</span>
+            </pre>
+            <pre class="section-block__pre pre">
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let d = a.map((currentValue, index, array) =&gt; {
+  console.log(index); <span class="com">// 0 1 2 3 4 5 6 7 8</span>
+  return currentValue;
+});
+            </pre>
+            <pre class="section-block__pre pre">
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let e = a.map((currentValue, index, array) =&gt; {
+  console.log(array); <span class="com">// [1,2,3,4,5,6,7,8,9] - возвращается столько раз, сколько элементов в массиве</span>
+  return currentValue;
+});
+            </pre>
+            <pre class="section-block__pre pre">
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let f = [...a];
+
+f[11] = 28;
+
+f.push(34);
+
+delete f[11];
+
+let j = f.map((currentValue, index, array) =&gt; {
+  return (currentValue * 2 - 1) * 3;
+});
+
+console.log(j); <span class="com">// [3,9,15,21,27,33,39,45,51,,,,201]</span>
+            </pre>
+            <pre class="section-block__pre pre">
+const students = [
+  { name: "Василий", age: 18 },
+  { name: "Геннадий", age: 23 },
+  { name: "Андрей", age: 17 },
+  { name: "Тимофей", age: 29 },
+  { name: "Иннокентий", age: 17 }
+];
+
+console.log(students.map((student) =&gt; {
+  return student.name;
+})); <span class="com">// ["Василий", "Геннадий", "Андрей", "Тимофей", "Иннокентий"]</span>
+            </pre>
+            <p class="section-block__text text">
+              Метод <span class="span-text">map()</span> создает новый массив с результатом выполнения функции callback для каждого элемента из исходного массива.
+            </p>
+            <p class="section-block__text text">
+              Новый массив будет иметь ту же длину, что и исходный массив, но каждый элемент будет изменен согласно результату функции callback.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="flat" class="section hidden">
+        <div class="section__container">
+          <h2 class="section__title title">Методы flat() и flatMap()</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">flat()</h3>
+            <p class="section-block__text text">
+              Метод <span class="span-text">flat()</span> - это встроенный метод массивов в JavaScript, который используется для "разглаживания" (или "сплющивания") вложенных подмассивов в одну плоскую структуру.
+            </p>
+            <p class="section-block__text text">
+              Когда применяется метод <span class="span-text">flat()</span>, все элементы вложенных подмассивов извлекаются и помещаются в новый массив на одном уровне.
+            </p>
+            <p class="section-block__text text">
+              Метод <span class="span-text">flat()</span> может принимать необязательный аргумент <span class="span-text">depth</span> в виде числового значения, который указывает, на сколько уровней вложенности нужно разгладить. Если <span class="span-text">depth</span> не указан, то метод <span class="span-text">flat()</span> применяется только к одному уровню.
+            </p>
+            <pre class="section-block__pre pre">
+const nestedArray = [1, [2, 3], [4, [5, 6]]];
+
+const flattened = nestedArray.flat(Infinity);
+
+console.log(flattened); <span class="com">// [1, 2, 3, 4, 5, 6]</span>
+            </pre>
+          </div>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">flatMap()</h3>
+            <p class="section-block__text text">
+                Метод <span class="span-text">flatMap()</span> - это функция высшего порядка в JavaScript, которая применяет функцию к каждому элементу в массиве и затем сглаживает (объединяет) полученные результаты в один массив.
+            </p>
+            <p class="section-block__text text">
+              Синтаксис метода <span class="span-text">flatMap()</span>:
+            </p>
+            <pre class="section-block__pre pre">
+array.flatMap(callback(currentValue, index, array), thisArg)
+            </pre>
+             <ul class="section-block__list">
+              <li class="section-block__item">
+                <span class="span-text">array</span> - это исходный массив.
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">callback</span> - это функция, которая будет применена к каждому элементу массива. Она принимает три аргумента: <span class="span-text">currentValue</span> (текущий элемент массива), <span class="span-text">index</span> (индекс текущего элемента) и <span class="span-text">array</span> (исходный массив).
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">thisArg</span> (необязательно) - это значение, которое будет использовано в качестве <span class="span-text">this</span> внутри функции <span class="span-text">callback</span>.
+              </li>
+              <li class="section-block__item"></li>
+            </ul>
+            <p class="section-block__text text">
+              Метод <span class="span-text">flatMap()</span> применяет функцию <span class="span-text">callback</span> к каждому элементу массива и сохраняет каждый возвращаемый результат в новом массиве. Затем он объединяет все элементы этого нового массива в один. Это отличает <span class="span-text">flatMap()</span> от метода <span class="span-text">m-ap()</span>, который возвращает новый массив с результатами применения функции к каждому элементу, но не объединяет их.
+            </p>
+            <pre class="section-block__pre pre">
+const arr = [1, 2, 3];
+
+<span class="com">// первый вариант</span>
+const result = arr.flatMap((num) => {
+  return [num, num * 2];
+});
+
+console.log("result:", result); <span class="com">// [1,2,2,4,3,6]</span>
+
+<span class="com">// второй вариант</span>
+const mappedArr = arr.flatMap(x => [x * 2]);
+
+console.log(mappedArr); <span class="com">// [2, 4, 6]</span>
+            </pre>
+          </div>
+        </div>
+      </section>
+      <section id="#reduce" class="section hidden dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">Методы reduce() и reduceRight()</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">reduce()</h3>
+            <p class="section-block__text text">
+              Метод <span class="span-text">reduce()</span> - это метод массивов в JavaScript, который применяет функцию-аккумулятор к каждому элементу массива и возвращает одно значение, которое является результатом аккумуляции.
+            </p>
+            <p class="section-block__text text">Синтаксис метода:</p>
+            <pre class="section-block__pre pre">
+array.reduce(callback[, initialValue])
+            </pre>
+            <ul class="section-block__list">
+              <li class="section-block__item">
+                <span class="span-text">callback</span> - функция, которая принимает четыре параметра:
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">accumulator</span> - аккумулятор, значение, накапливающее результат;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">currentValue</span> - текущий обрабатываемый элемент массива;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">currentIndex</span> - индекс текущего обрабатываемого элемента массива;
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">array</span> - сам массив, к которому применяется метод reduce.
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">initialValue</span> (необязательный) - начальное значение аккумулятора. Если это значение не указано, то аккумулятор будет равен первому элементу массива, а итерация начнется со второго элемента.
+              </li>
+            </ul>
+            <p class="section-block__text text">
+              Пример использования метода:
+            </p>
+            <pre class="section-block__pre pre">
+const numbers = [1, 2, 3, 4, 5];
+
+<span class="com">// Сумма элементов массива</span>
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
+
+console.log(sum); <span class="com">// Выведет: 15</span>
+
+<span class="com">// Умножение элементов массива</span>
+const product = numbers.reduce((accumulator, currentValue) => accumulator * currentValue);
+
+console.log(product); <span class="com">// Выведет: 120</span>
+            </pre>
+            <p class="section-block__text text">
+              В приведенном примере производится суммирование и умножение элементов массива при помощи метода reduce. В первом случае аккумулятор инициализируется значением 1 и при каждой итерации к нему добавляется текущий элемент массива. В результате получаем сумму всех элементов. Во втором случае аккумулятор инициализируется значением 1 и при каждой итерации умножается на текущий элемент массива. Таким образом, получаем произведение всех элементов.
+            </p>
+            <pre class="section-block__pre pre"></pre>
+            <ol class="section-block__list section-block__list--numbs">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ol>
+            <p class="section-block__text text"></p>
+            <pre class="section-block__pre pre"></pre>
+          </div>
+        </div>
+      </section>
+      <section id="#" class="section hidden">
+        <div class="section__container">
+          <h2 class="section__title title">CAPTION</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title"></h3>
+            <ul class="section-block__list">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ul>
+            <ol class="section-block__list section-block__list--numbs">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ol>
+            <p class="section-block__text text"></p>
+            <pre class="section-block__pre pre"></pre>
+          </div>
+        </div>
+      </section>
+      <section id="#" class="section hidden dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">CAPTION</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title"></h3>
+            <ul class="section-block__list">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ul>
+            <ol class="section-block__list section-block__list--numbs">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ol>
+            <p class="section-block__text text"></p>
+            <pre class="section-block__pre pre"></pre>
           </div>
         </div>
       </section>
