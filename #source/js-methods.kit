@@ -405,8 +405,13 @@
                 </a>
               </li>
               <li class="hero-menu__item">
-                <a class="hero-menu__link link js-scroll-link" href="#" title="#">
-                  <span></span>
+                <a class="hero-menu__link link js-scroll-link" href="#reduce" title="Обработка нескольких значений и возврата одного">
+                  <span>Метод reduce()</span>
+                </a>
+              </li>
+              <li class="hero-menu__item">
+                <a class="hero-menu__link link js-scroll-link" href="#startendswith" title="Проверка наличия определённых символов в строках">
+                  <span>Методы startWith() и endsWith()</span>
                 </a>
               </li>
             </ul>
@@ -684,7 +689,7 @@ console.log(sortUsers(arr, "name", true));
               Синтаксис метода <span class="span-text">filter()</span> выглядит следующим образом:
             </p>
             <pre class="section-block__pre pre">
-const newArray = array.filter((currentValue, index, arr) =&gt; {
+const newArray = array.filter((currentValue, index, array) =&gt; {
   <span class="com">// тело функции</span>
 });
             </pre>
@@ -700,7 +705,7 @@ const newArray = array.filter((currentValue, index, arr) =&gt; {
                 <span class="span-text">index (опциональный)</span> - индекс текущего элемента массива;
               </li>
               <li class="section-block__item">
-                <span class="span-text">arr (опциональный)</span> - ссылка на исходный массив;
+                <span class="span-text">array (опциональный)</span> - ссылка на исходный массив;
               </li>
               <li class="section-block__item">
                 <span class="span-text">newArray</span> - новый массив, содержащий отфильтрованные элементы;
@@ -898,7 +903,7 @@ function funcIncludes() {
   document.querySelector(".value").innerHTML = res;
 }
 
-btn.addEventListener("click", (e) =&lt; {
+btn.addEventListener("click", (e) =&gt; {
   e.preventDefault();
   funcIncludes();
   inputValue = "";
@@ -1682,7 +1687,7 @@ console.log(mappedArr); <span class="com">// [2, 4, 6]</span>
           </div>
         </div>
       </section>
-      <section id="#reduce" class="section hidden dark-page">
+      <section id="reduce" class="section hidden dark-page">
         <div class="section__container">
           <h2 class="section__title title">Методы reduce() и reduceRight()</h2>
           <div class="section__block section-block">
@@ -1723,17 +1728,129 @@ const numbers = [1, 2, 3, 4, 5];
 <span class="com">// Сумма элементов массива</span>
 const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue);
 
-console.log(sum); <span class="com">// Выведет: 15</span>
+console.log(sum); <span class="com">// 1+2+3+4+5 = Выведет: 15</span>
 
 <span class="com">// Умножение элементов массива</span>
 const product = numbers.reduce((accumulator, currentValue) => accumulator * currentValue);
 
-console.log(product); <span class="com">// Выведет: 120</span>
+console.log(product); <span class="com">// 1*2*3*4*5 = Выведет: 120</span>
             </pre>
             <p class="section-block__text text">
               В приведенном примере производится суммирование и умножение элементов массива при помощи метода reduce. В первом случае аккумулятор инициализируется значением 1 и при каждой итерации к нему добавляется текущий элемент массива. В результате получаем сумму всех элементов. Во втором случае аккумулятор инициализируется значением 1 и при каждой итерации умножается на текущий элемент массива. Таким образом, получаем произведение всех элементов.
             </p>
-            <pre class="section-block__pre pre"></pre>
+          </div>
+        </div>
+      </section>
+      <section id="startendswith" class="section hidden">
+        <div class="section__container">
+          <h2 class="section__title title">Методы startsWith() и endsWith()</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">startsWith()</h3>
+            <p class="section-block__text text">
+              Метод <span class="span-text">startsWith()</span> в JavaScript представляет собой строковый метод, который проверяет, начинается ли строка с определенного символа или подстроки.
+            </p>
+            <p class="section-block__text text">
+              Синтаксис:
+            </p>
+            <pre class="section-block__pre pre">
+str.startsWith(searchString[, position]);
+            </pre>
+            <ul class="section-block__list">
+            <p class="section-block__text text">где:</p>
+              <li class="section-block__item">
+                <span class="span-text">str</span> - строка, которую нужно проверить на начало
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">searchString</span> - подстрока, с которой нужно проверить начало строки
+              </li>
+              <li class="section-block__item">
+                <span class="span-text">position</span> (необязательный параметр) - позиция в строке, с которой нужно начать поиск (значение по умолчанию - 0)
+              </li>
+            </ul>
+            <p class="section-block__text text">
+              Метод возвращает булевое значение <span class="span-text">true</span>, если строка начинается с заданной подстроки, и <span class="span-text">false</span> в противном случае.
+            </p>            
+            <p class="section-block__text text">
+              Пример использования метода <span class="span-text">startsWith()</span>:
+            </p>
+            <pre class="section-block__pre pre">
+let str = "Hello, world!";
+console.log(str.startsWith("Hello")); <span class="com">// true</span>
+console.log(str.startsWith("hello")); <span class="com">// false</span>
+console.log(str.startsWith("world", 7)); <span class="com">// true</span>
+            </pre>
+            <p class="section-block__text text">
+              В первом примере метод <span class="span-text">startsWith()</span> возвращает <span class="span-text">true</span>, потому что строка <span class="span-text">str</span> начинается с подстроки "Hello".
+            </p>
+            <p class="section-block__text text">
+              Во втором примере метод возвращает <span class="span-text">false</span>, поскольку поиск подстроки "hello" чувствителен к регистру, и строки не совпадают.
+            </p>
+            <p class="section-block__text text">
+              В последнем примере метод возвращает <span class="span-text">true</span>, так как после позиции 7 строка начинается с подстроки "world".
+            </p>
+            <p class="section-block__text text">
+              Метод <span class="span-text">startsWith()</span> предоставляет удобный способ выполнить проверку на начало строки без использования сложных регулярных выражений и повторений кода.
+            </p>
+          </div>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title">endsWith()</h3>
+            <p class="section-block__text text">
+              Метод <span class="span-text">endsWith</span> в JavaScript используется для проверки, заканчивается ли указанная строка определенными символами или подстрокой. Он возвращает логическое значение <span class="span-text">true</span>, если строка заканчивается указанными символами, и <span class="span-text">false</span> в противном случае.
+            </p>
+            <p class="section-block__text text">
+              Синтаксис:
+            </p>
+            <pre class="section-block__pre pre">
+str.endsWith(searchString[, length]);
+            </pre>
+            <p class="section-block__text text">
+              <span class="span-text">searchString</span> – это строка или символ, наличие которых нужно проверить в конце строки <span class="span-text">str</span>. Если <span class="span-text">searchString</span> является строкой, метод проверяет, содержится ли указанная строка в конце исходной строки. Если <span class="span-text">searchString</span> является символом, метод проверяет, совпадает ли последний символ в исходной строке с указанным символом.
+            </p>
+            <p class="section-block__text text">
+              <span class="span-text">length</span> (необязательный параметр) – определяет, сколько символов в конце строки необходимо проверить. Если не указан, проверка будет выполнена для всей исходной строки.
+            </p>
+            <p class="section-block__text text">
+              Пример использования:
+            </p>
+            <pre class="section-block__pre pre">
+const str = 'Hello World';
+
+console.log(str.endsWith('World')); <span class="com">// true</span>
+console.log(str.endsWith('world')); <span class="com">// false</span>
+console.log(str.endsWith('Hello')); <span class="com">// false</span>
+
+console.log(str.endsWith('World', 11)); <span class="com">// true</span>
+console.log(str.endsWith('World', 10)); <span class="com">// false</span>
+            </pre>
+            <p class="section-block__text text">
+              В приведенном примере, первый вызов <span class="span-text">endsWith</span> вернет <span class="span-text">true</span>, так как строка <span class="span-text">str</span> заканчивается подстрокой 'World'.
+            </p>
+            <p class="section-block__text text">
+              Второй вызов вернет <span class="span-text">false</span>, потому что метод чувствителен к регистру символов и подстрока 'world' не найдена в конце строки.
+            </p>
+            <p class="section-block__text text">
+              Третий вызов вернет <span class="span-text">false</span>, так как строка 'Hello' не является последним словом в исходной строке.
+            </p>
+            <p class="section-block__text text">
+              Последние два вызова добавляют дополнительный параметр <span class="span-text">length</span>. В первом случае, если проверяемые символы ограничены позицией 11 (начиная с 0), метод вернет true, так как строка <span class="span-text">str</span> заканчивается указанной подстрокой. 
+            </p>
+            <p class="section-block__text text">
+              Во втором случае, когда проверяемые символы ограничены позицией 10, метод вернет <span class="span-text">false</span>, поскольку подстрока 'World' не будет найдена в ограниченной части строки.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="#" class="section hidden dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">CAPTION</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title"></h3>
+            <ul class="section-block__list">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ul>
             <ol class="section-block__list section-block__list--numbs">
               <li class="section-block__item"></li>
               <li class="section-block__item"></li>
@@ -1768,6 +1885,28 @@ console.log(product); <span class="com">// Выведет: 120</span>
         </div>
       </section>
       <section id="#" class="section hidden dark-page">
+        <div class="section__container">
+          <h2 class="section__title title">CAPTION</h2>
+          <div class="section__block section-block">
+            <h3 class="section-block__title title"></h3>
+            <ul class="section-block__list">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ul>
+            <ol class="section-block__list section-block__list--numbs">
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+              <li class="section-block__item"></li>
+            </ol>
+            <p class="section-block__text text"></p>
+            <pre class="section-block__pre pre"></pre>
+          </div>
+        </div>
+      </section>
+      <section id="#" class="section hidden">
         <div class="section__container">
           <h2 class="section__title title">CAPTION</h2>
           <div class="section__block section-block">
